@@ -3,75 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo + Github 建立部落格 | Hexo</title>
+  <title>Hexo + Github 建立部落格 | Andy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Hexo 官網
-Hexo 標記語法
-
-什麼是Hexo?
-Hexo 是一個快速、簡單且強大的網誌框架。Hexo 使用 Markdown（或其他渲染引擎）解析您的文章，並在幾秒鐘內，透過漂亮的主題產生靜態檔案。
-安裝需求
-
-NodeJS
-Git
-
-安裝Hexo
-建立Hexo存放資料夾
-1mkdir hexo
-
-移至Hexo資料夾
-1cd hexo
-
-安裝Hexo
-123sudo npm instal">
+Hexo 標記語法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo + Github 建立部落格">
 <meta property="og:url" content="http://bbandydd.github.io/blog/blog/2016/06/03/hexo-init/">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Andy's Blog">
 <meta property="og:description" content="Hexo 官網
-Hexo 標記語法
-
-什麼是Hexo?
-Hexo 是一個快速、簡單且強大的網誌框架。Hexo 使用 Markdown（或其他渲染引擎）解析您的文章，並在幾秒鐘內，透過漂亮的主題產生靜態檔案。
-安裝需求
-
-NodeJS
-Git
-
-安裝Hexo
-建立Hexo存放資料夾
-1mkdir hexo
-
-移至Hexo資料夾
-1cd hexo
-
-安裝Hexo
-123sudo npm instal">
+Hexo 標記語法">
 <meta property="og:image" content="http://i.v2ex.co/5bb7J7NT.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo + Github 建立部落格">
 <meta name="twitter:description" content="Hexo 官網
-Hexo 標記語法
-
-什麼是Hexo?
-Hexo 是一個快速、簡單且強大的網誌框架。Hexo 使用 Markdown（或其他渲染引擎）解析您的文章，並在幾秒鐘內，透過漂亮的主題產生靜態檔案。
-安裝需求
-
-NodeJS
-Git
-
-安裝Hexo
-建立Hexo存放資料夾
-1mkdir hexo
-
-移至Hexo資料夾
-1cd hexo
-
-安裝Hexo
-123sudo npm instal">
+Hexo 標記語法">
 
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Andy&#39;s Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -90,7 +39,7 @@ Git
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/blog/" id="logo">Hexo</a>
+        <a href="/blog/" id="logo">Andy&#39;s Blog</a>
       </h1>
       
     </div>
@@ -141,6 +90,7 @@ Git
         <p><img src="http://i.v2ex.co/5bb7J7NT.png" alt="" title="Hexo"></p>
 <p><a href="https://hexo.io/zh-tw/" target="_blank" rel="external">Hexo 官網</a></p>
 <p><a href="https://wastemobile.gitbooks.io/gitbook-chinese/content/format/markdown.html" target="_blank" rel="external">Hexo 標記語法</a></p>
+<a id="more"></a>
 <hr>
 <h2 id="什麼是Hexo?">什麼是Hexo?</h2>
 <p>Hexo 是一個快速、簡單且強大的網誌框架。Hexo 使用 Markdown（或其他渲染引擎）解析您的文章，並在幾秒鐘內，透過漂亮的主題產生靜態檔案。</p>
@@ -168,8 +118,12 @@ Git
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">複製github https網址</div><div class="line">如：http<span class="variable">s:</span>//github.<span class="keyword">com</span>/bbandydd/blog.git</div></pre></td></tr></table></figure>
 
 <h3 id="修改Hexo資料夾的_config-yml">修改Hexo資料夾的_config.yml</h3>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>: <span class="string"></span></div><div class="line">	<span class="attribute">type</span>: <span class="string">github</span></div><div class="line">	<span class="attribute">repository</span>: <span class="string">https://github.com/bbandydd/blog.git</span></div><div class="line">	<span class="attribute">branch</span>: <span class="string">gh-pages</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">url</span>: <span class="string">http://bbandydd.github.io/blog/</span></div><div class="line"></div><div class="line"><span class="http"><span class="attribute">deploy</span>: <span class="string"></span></span></div><div class="line">	<span class="attribute">type</span>: <span class="string">github</span></div><div class="line">	<span class="attribute">repository</span>: <span class="string">https://github.com/bbandydd/blog.git</span></div><div class="line">	<span class="attribute">branch</span>: <span class="string">gh-pages</span></div></pre></td></tr></table></figure>
 
+<ul>
+<li>冒號後要有空白</li>
+<li>url最後要加 / ，否則deploy後css路徑會錯誤</li>
+</ul>
 <hr>
 <h2 id="Hexo_常用指令">Hexo 常用指令</h2>
 <h3 id="建立新文章">建立新文章</h3>
@@ -200,11 +154,28 @@ Git
 <ul>
 <li>網站有異常時可以先清除</li>
 </ul>
+<hr>
+<h2 id="修改主題">修改主題</h2>
+<ul>
+<li>移動至themes資料夾</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> themes</div></pre></td></tr></table></figure>
+
+<ul>
+<li>下載 <a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">主題檔案</a></li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/klugjo/hexo-theme-clean-blog.git</div></pre></td></tr></table></figure>
+
+<ul>
+<li>修改_config.yml</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">themes</span>: <span class="string">hexo-theme-clean-blog</span></div></pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://bbandydd.github.io/blog/2016/06/03/hexo-init/" data-id="bqb8qzq1ancqumb5" class="article-share-link">Share</a>
+      <a data-url="http://bbandydd.github.io/blog/2016/06/03/hexo-init/" data-id="1lfvrria8ohjt4mn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hexo/">hexo</a></li></ul>
@@ -271,7 +242,7 @@ Git
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 John Doe<br>
+      &copy; 2016 Andy Tsai<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
