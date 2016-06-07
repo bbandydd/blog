@@ -1,9 +1,9 @@
 title: Hexo + Github 建立部落格
-date: 2016-06-03 10:49:07
+date: 2015-05-14 10:49:07
 tags: [hexo, github]
 ---
 
-![](http://i.v2ex.co/5bb7J7NT.png "Hexo")
+![hexo](http://i.v2ex.co/5bb7J7NT.png "Hexo")
 
 [Hexo 官網](https://hexo.io/zh-tw/)
 
@@ -17,26 +17,33 @@ ___
 
 Hexo 是一個快速、簡單且強大的網誌框架。Hexo 使用 Markdown（或其他渲染引擎）解析您的文章，並在幾秒鐘內，透過漂亮的主題產生靜態檔案。
 
-## 1. 安裝需求
+## Why Hexo ?
+使用 Hexo 建立 Blog 的好處有以下：
+
+- 文章裡面可以放上 Coge 並加上 highlight 高亮語法顯示。
+- 使用 macdown 語言快速編輯，筆記、Blog 一次搞定。
+- 可建立於 GitHub
+- 使用 Node.js 建立
+
+## 安裝需求
 
 - [NodeJS](https://nodejs.org/en/)
 - [Git](https://git-scm.com)
 
-## 2. 安裝Hexo
+## 安裝hexo2.8.3版本
 
-### 建立Hexo存放資料夾
+個人安裝時最新版本是3.0, 但是問題很多所以還是建議安裝2.8.3版
 
-```
-	mkdir hexo
-```
+如果安裝過程出現權限錯誤，須在命令前加上sudo
 
-### 移至Hexo資料夾
+### 建置hexo存放資料夾
 
 ```
-	cd hexo
+	mkdir [filename]
+	cd [filename]
 ```
 
-### 安裝Hexo
+### 安裝2.8.3版本
 
 ```
 	sudo npm install hexo@v2.8.3 -g
@@ -53,14 +60,14 @@ Hexo 是一個快速、簡單且強大的網誌框架。Hexo 使用 Markdown（�
 ### 安裝Hexo Plugin
 
 ```
-	npm install hexo-renderer-marked@0.1 --save
-	npm install hexo-renderer-stylus@0.1 --save
+	sudo npm install hexo-renderer-marked@0.1 --save
+	sudo npm install hexo-renderer-stylus@0.1 --save
 
 ```
 
 ---
 
-## 3. 建立Github repository
+## 建立Github repository
 
 ### Github建立一個給Hexo用的Repository
 
@@ -74,7 +81,7 @@ Hexo 是一個快速、簡單且強大的網誌框架。Hexo 使用 Markdown（�
 ```
 	url: http://bbandydd.github.io/blog/
 
-	deploy: 
+	deploy:
 		type: github
 		repository: https://github.com/bbandydd/blog.git
 		branch: gh-pages
@@ -82,70 +89,3 @@ Hexo 是一個快速、簡單且強大的網誌框架。Hexo 使用 Markdown（�
 
 - 冒號後要有空白
 - url最後要加 / ，否則deploy後css路徑會錯誤
-
----
-
-## 4. Hexo 常用指令
-
-### 建立新文章
-
-```
-	hexo new "這是新文章"
-```
-
-- 每次建立新文章需先執行hexo new
-
-### 啟動本地伺服器
-
-```
-	hexo server
-```
-
-- 可以預覽目前文章畫面
-
-### 手動產生靜態檔案
-
-```
-	hexo generate
-```
-
-### 部署至github
-
-```
-	hexo deploy
-```
-
-- 建立先手動產生靜態檔案再部署至github
-- deploy結束可以連Github網址觀看，如:http://bbandydd.github.io/blog
-
-### 清除暫存文件及靜態檔案
-
-```
-	hexo clean
-```
-
-- 網站有異常時可以先清除
-
----
-
-## 5. 修改主題
-
-- 移動至themes資料夾
-
-```
-	cd themes
-```
-
-- 下載 [主題檔案](https://github.com/hexojs/hexo/wiki/Themes)
-
-```
-	git clone https://github.com/klugjo/hexo-theme-clean-blog.git
-```
-
-- 修改_config.yml
-
-```
-	themes: hexo-theme-clean-blog
-```
-
-

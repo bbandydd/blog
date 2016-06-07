@@ -3,15 +3,20 @@ date: 2016-06-05 03:58:47
 tags: [hexo, github]
 ---
 
-#緣由
+# 緣由
 
 1. 電腦內Hexo檔案消失
 2. Github只有產生完成的靜態檔案
-3. 2015年寫的近30篇文章消失
+3. 2015年寫的40篇文章消失
 4. 中間經歷換工作及適應環境
 5. 2016/6 決定重啟Hexo
-6. 所以這次最重要的是 <font size="3" color="red">備份</font>  <font size="5" color="red">備份</font> <font size="7" color="red">備份</font> 
+6. 所以這次最重要的是 <font size="3" color="red">備份</font>  <font size="5" color="red">備份</font> <font size="7" color="red">備份</font>
 7. 因此這篇將會介紹如何使用同一個Repository備份及發佈Hexo
+
+--
+
+2016/06/06更新：
+- 由於之前hexo有加入sitemap，因此網頁上還可以找到文章，慢慢手動將它補回來
 
 <!-- more -->
 
@@ -25,7 +30,7 @@ tags: [hexo, github]
 
 ```
 	_config.yml修改
-	
+
 	deploy:
 	  type: github
 	  repository: https://github.com/bbandydd/blog.git
