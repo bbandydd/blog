@@ -1,6 +1,6 @@
 title: Hexo + Github 建立部落格
 date: 2015-05-14 10:49:07
-tags: [hexo, github]
+tags: [Hexo, Github]
 ---
 
 ![hexo](http://i.v2ex.co/5bb7J7NT.png "Hexo")

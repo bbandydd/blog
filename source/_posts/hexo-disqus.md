@@ -1,6 +1,6 @@
 title: Hexo 留言板 - Disqus
 date: 2015-05-16 16:58:13
-tags: [hexo, disqus]
+tags: [Hexo, Disqus]
 ---
 
 ## 目標

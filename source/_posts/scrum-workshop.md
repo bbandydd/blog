@@ -1,6 +1,6 @@
 title: Srum初體驗工作坊
 date: 2015-05-10 17:19:31
-tags: [scrum, workshop]
+tags: [Scrum, Workshop]
 ---
 
 Scrum是一個包括了一系列實踐和預定義角色的過程骨架。Scrum中的主要角色包括：

@@ -1,6 +1,6 @@
 title: Hexo常用指令
 date: 2015-05-14 16:40:55
-tags: [hexo]
+tags: [Hexo]
 ---
 
 ## 目標

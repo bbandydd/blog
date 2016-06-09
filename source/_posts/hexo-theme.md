@@ -1,6 +1,6 @@
 title: Hexo 主題
 date: 2015-05-14 16:43:25
-tags: [hexo]
+tags: [Hexo]
 ---
 
 ## 目標

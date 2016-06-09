@@ -1,6 +1,6 @@
 title: 在Hexo new 之後立即打開新建的MacDown檔案
 date: 2015-05-24 17:12:38
-tags: [hexo, markdown]
+tags: [Hexo, Markdown]
 ---
 
 ## 目標

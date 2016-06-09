@@ -1,6 +1,6 @@
 title: atom-intro
 date: 2016-06-05 21:26:37
-tags: [atom]
+tags: [Atom]
 ---
 
 <img src = "http://media02.hongkiat.com/atom-code-editor/atom-logo.jpg"/>

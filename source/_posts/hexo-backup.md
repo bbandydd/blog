@@ -1,6 +1,6 @@
 title: Hexo + Github - 備份與發布
 date: 2016-06-05 03:58:47
-tags: [hexo, github]
+tags: [Hexo, Github]
 ---
 
 # 緣由

@@ -1,6 +1,6 @@
 title: Hexo sitemap 提交至 Google 網站管理員
 date: 2015-05-28 16:44:47
-tags: [hexo, sitemap]
+tags: [Hexo, Sitemap]
 ---
 
 # sitemap
