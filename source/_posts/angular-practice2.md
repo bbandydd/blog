@@ -6,6 +6,8 @@ tags: [Angular]
 - ng-click
 - ng-show
 
+<!-- more -->
+
 ## ng-click
 - 透過ng-click去觸發事件
 - 下面透過ng-click去觸發 changeProduct()

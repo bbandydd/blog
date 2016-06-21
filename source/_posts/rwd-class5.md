@@ -20,6 +20,8 @@ tags: [RWD]
 - 設定圖片：itemprop=”image”
 - 設定描述：itemprop=”description”
 
+<!-- more -->
+
 ## Vertical rhyth (文字垂直韻律)
 - 使用Vertical rhyth排出友善的圖文排版
 - 例如寫英文有格線的觀念

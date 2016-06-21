@@ -17,6 +17,8 @@ HackMD是即時的共同協作筆記
 
 [原始檔](https://hackmd.io/EYRgbAhsBMDsAmBaMBjAHAVkQFgyYiAnGBkibAGYAMEAzPIbAKYVA===)
 
+<!-- more -->
+
 ---
 
 ## 1. HackMD 語法

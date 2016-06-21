@@ -10,6 +10,8 @@ tags: [Rwd]
 - :before、:after
 - image editing、icon font
 
+<!-- more -->
+
 ## PC舒適圈外會遇到的問題
 - 螢幕解析度
 - Mobile瀏覽器

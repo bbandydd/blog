@@ -11,6 +11,8 @@ tags: [Rwd]
 - box-sizing、css3 selector
 - homework： Basic Responsive Layout
 
+<!-- more -->
+
 ## Chrome 開發工具課程
 
 - [Code School](http://discover-devtools.codeschool.com)

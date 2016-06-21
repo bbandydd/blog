@@ -11,6 +11,8 @@ tags: [Sass, SublimeText]
 
 {% iframe https://www.youtube.com/embed/GFzjOzwtcxA 600 400 %}
 
+<!-- more -->
+
 ## SASS 、 SCSS
 
 - SublimeText預設沒有支援Sass、Scss高亮效果，所以首要安裝這兩個Plugin
