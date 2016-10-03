@@ -122,6 +122,12 @@ browser
 
 ----
 
+### 抓不到dom
+
+- waitForElementPresent確認載入完成
+
+----
+
 ### 偶發timeout(穩定性)
 
 - 執行時間過久偶發timeout，造成測試失敗
