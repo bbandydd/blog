@@ -12,6 +12,14 @@
 
 ---
 
+## 參考
+
+- TDD x VueJS
+	- [簡報](https://docs.google.com/presentation/d/1SvvKfWvAgQRpyOwN1yke38BTyIfJMjD-SthwiQs6Zzw/edit#slide=id.p)
+	- [影片](https://www.youtube.com/watch?v=yeVgDph6wMQ)
+
+---
+
 ## 資料夾結構
 
 ```
@@ -71,6 +79,7 @@
 
 
 ```
+--group: 指定執行js folder
 --test： 指定執行js file
 --testcase： 單獨執行test case
 -e： 指定nightwatch環境變數設定擋，使用的account、url
@@ -113,7 +122,26 @@ browser
 
 ----
 
+### 偶發timeout(穩定性)
+
+- 執行時間過久偶發timeout，造成測試失敗
+
+- 解法
+	- 不用--group，改用--test多次執行
+
+----
+
 ### chrome driver版本問題<br>(mac, windows, linux)
+
+----
+
+### pause太久 (linux)
+
+- pause太久後續動作找不到dom，造成測試失敗
+
+- 解法
+	- 分多次pause，中間需穿插其他動作，如waitForElementPresent
+	- pause不能連續執行
 
 ----
 
@@ -128,11 +156,13 @@ browser
 #### RWD需放大視窗
 
 - .windowMaximize('current') - for windows
-- .resizeWindow(1920, 1080) - for windows and mac
+- .resizeWindow(1920, 1080) - for all browser
 
 ----
 
 #### acceptAlert not work in iframe (linux)
+
+- linux chrome driver版本太舊
 
 - 解法
 	- browser.url()進入iframe網址在做後續動作
