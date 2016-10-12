@@ -9,6 +9,8 @@ tags: [React]
 
 - 但因為結構有些複雜，花了點時間研究
 
+- 官方文件提到和redux結合可以參考src/components/LanguageSwitcher/LanguageSwitcher.js
+
 - 下面講解如何加入一個新的Component並結合Redux
 
 <!-- more -->
