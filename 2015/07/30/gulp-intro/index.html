@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Gulp入門 | Andy&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Gulp
+
+Gulp 是基於 Node.js 的任務自動化管理工具，和 Grunt 同樣都是用來簡化人工的步驟，但兩者卻又有著本質上的差異，最主要就是 Gulp 使用了 streams ( 流 ) 的概念，一個任務一個任務的依序按照流程做完，相當的容易思考和理解，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gulp入門">
+<meta property="og:url" content="http://bbandydd.github.io/blog/blog/2015/07/30/gulp-intro/">
+<meta property="og:site_name" content="Andy's Blog">
+<meta property="og:description" content="Gulp
+
+Gulp 是基於 Node.js 的任務自動化管理工具，和 Grunt 同樣都是用來簡化人工的步驟，但兩者卻又有著本質上的差異，最主要就是 Gulp 使用了 streams ( 流 ) 的概念，一個任務一個任務的依序按照流程做完，相當的容易思考和理解，">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Gulp入門">
+<meta name="twitter:description" content="Gulp
+
+Gulp 是基於 Node.js 的任務自動化管理工具，和 Grunt 同樣都是用來簡化人工的步驟，但兩者卻又有著本質上的差異，最主要就是 Gulp 使用了 streams ( 流 ) 的概念，一個任務一個任務的依序按照流程做完，相當的容易思考和理解，">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Andy&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog/css/style.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Andy&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://bbandydd.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-gulp-intro" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2015/07/30/gulp-intro/" class="article-date">
+  <time datetime="2015-07-29T17:55:00.000Z" itemprop="datePublished">Jul 30 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Gulp入門
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Gulp">Gulp</h2>
+<ul>
+<li>Gulp 是基於 Node.js 的任務自動化管理工具，和 Grunt 同樣都是用來簡化人工的步驟，但兩者卻又有著本質上的差異，最主要就是 Gulp 使用了 streams ( 流 ) 的概念，一個任務一個任務的依序按照流程做完，相當的容易思考和理解，</li>
+</ul>
+<a id="more"></a>
+<h2 id="安裝">安裝</h2>
+<ul>
+<li>安裝Node.js</li>
+<li>安裝Gulp</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> npm install -g gulp</div></pre></td></tr></table></figure>
+
+<h2 id="Gulp環境(專案資料夾)">Gulp環境(專案資料夾)</h2>
+<h2 id="必備檔案">必備檔案</h2>
+<ul>
+<li>package.json：整理gulp plugin</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">init</span></div></pre></td></tr></table></figure>
+
+<ul>
+<li>gulpfile.js：撰寫程式化流程</li>
+<li>假如有別人也加入專案，需要這兩個檔案將環境建立好</li>
+</ul>
+<h2 id="Gulp_Plugin">Gulp Plugin</h2>
+<ul>
+<li>當有寫 —save-dev 就會將plugin寫入package.json的devDependencies</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> gulp gulp-coffee gulp-ruby-sass <span class="comment">--save-dev</span></span></div></pre></td></tr></table></figure>
+
+<ul>
+<li>gulp-coffee：編譯coffeeScript</li>
+<li>gulp-ruby-sass：編譯SASS</li>
+<li>gulp-autoprefixer：處理瀏覽器前綴</li>
+<li>gulp-minify-css：壓縮CSS</li>
+<li>gulp-jshint：js debug</li>
+<li>gulp-uglify：壓縮js</li>
+<li>gulp-imagemin：壓縮圖片</li>
+<li>gulp-rename：重新命名</li>
+<li>gulp-concat：合併</li>
+<li>gulp-notify：提示訊息</li>
+<li>gulp-cache：圖片暫存，只有圖片變換才更新</li>
+<li>gulp-livereload：提供livereload功能</li>
+<li>del：清除檔案</li>
+</ul>
+<h2 id="Gulp起手式">Gulp起手式</h2>
+<ul>
+<li>定義任務名稱，指定任務工作內容</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gulp.task(<span class="string">'default'</span>, [<span class="string">'clean'</span>], <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    gulp.start(<span class="string">'styles'</span>, <span class="string">'scripts'</span>, <span class="string">'images'</span>, <span class="string">'coffee'</span>, <span class="string">'watch'</span>);</div><div class="line">});</div></pre></td></tr></table></figure>
+
+<ul>
+<li>監看特定檔案是否變動</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.watch('sass<span class="comment">/**/</span>*.sass', ['styles']);</div></pre></td></tr></table></figure>
+
+<ul>
+<li>gulpfile.js</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> * gulp</div><div class="line"> * $ npm install gulp-coffee gulp-ruby-sass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-livereload gulp-cache del --save-dev</div><div class="line"> */</div><div class="line"><span class="comment">// Load plugins</span></div><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</div><div class="line">    coffee = <span class="built_in">require</span>(<span class="string">'gulp-coffee'</span>),</div><div class="line">    sass = <span class="built_in">require</span>(<span class="string">'gulp-ruby-sass'</span>),</div><div class="line">    autoprefixer = <span class="built_in">require</span>(<span class="string">'gulp-autoprefixer'</span>),</div><div class="line">    minifycss = <span class="built_in">require</span>(<span class="string">'gulp-minify-css'</span>),</div><div class="line">    jshint = <span class="built_in">require</span>(<span class="string">'gulp-jshint'</span>),</div><div class="line">    uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>),</div><div class="line">    imagemin = <span class="built_in">require</span>(<span class="string">'gulp-imagemin'</span>),</div><div class="line">    rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>),</div><div class="line">    concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>),</div><div class="line">    notify = <span class="built_in">require</span>(<span class="string">'gulp-notify'</span>),</div><div class="line">    cache = <span class="built_in">require</span>(<span class="string">'gulp-cache'</span>),</div><div class="line">    livereload = <span class="built_in">require</span>(<span class="string">'gulp-livereload'</span>),</div><div class="line">    del = <span class="built_in">require</span>(<span class="string">'del'</span>);</div><div class="line"><span class="comment">// 定義路徑</span></div><div class="line"><span class="keyword">var</span> paths = {</div><div class="line">    sass: <span class="string">'sass/all.sass'</span>,</div><div class="line">    js: <span class="string">'js/**/*.js'</span>,</div><div class="line">    images: <span class="string">'images/**/*'</span>,</div><div class="line">    coffee: <span class="string">'coffee/**/*.coffee'</span></div><div class="line">};</div><div class="line"><span class="comment">// Styles</span></div><div class="line">gulp.task(<span class="string">'styles'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">  <span class="keyword">return</span> sass(paths.sass, { style: <span class="string">'expanded'</span> })</div><div class="line">    .pipe(autoprefixer(<span class="string">'last 2 version'</span>))</div><div class="line">    .pipe(gulp.dest(<span class="string">'assets/css'</span>))</div><div class="line">    <span class="comment">//.pipe(rename({ suffix: '.min' }))</span></div><div class="line">    <span class="comment">//.pipe(minifycss())</span></div><div class="line">    <span class="comment">//.pipe(gulp.dest('dist/styles'))</span></div><div class="line">    .pipe(notify({ message: <span class="string">'Styles task complete'</span> }));</div><div class="line">});</div><div class="line"><span class="comment">// Scripts</span></div><div class="line">gulp.task(<span class="string">'scripts'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">  <span class="keyword">return</span> gulp.src(paths.js)</div><div class="line">    <span class="comment">//.pipe(jshint('.jshintrc'))</span></div><div class="line">    .pipe(jshint.reporter(<span class="string">'default'</span>))</div><div class="line">    .pipe(concat(<span class="string">'main.js'</span>))</div><div class="line">    .pipe(gulp.dest(<span class="string">'assets/js'</span>))</div><div class="line">    <span class="comment">//.pipe(rename({ suffix: '.min' }))</span></div><div class="line">    <span class="comment">//.pipe(uglify())</span></div><div class="line">    .pipe(notify({ message: <span class="string">'Scripts task complete'</span> }));</div><div class="line">});</div><div class="line"><span class="comment">// Images</span></div><div class="line">gulp.task(<span class="string">'images'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">  <span class="keyword">return</span> gulp.src(paths.images)</div><div class="line">    .pipe(cache(imagemin({ optimizationLevel: <span class="number">3</span>, progressive: <span class="literal">true</span>, interlaced: <span class="literal">true</span> })))</div><div class="line">    .pipe(gulp.dest(<span class="string">'assets/images'</span>))</div><div class="line">    .pipe(notify({ message: <span class="string">'Images task complete'</span> }));</div><div class="line">});</div><div class="line"><span class="comment">// Coffee</span></div><div class="line">gulp.task(<span class="string">'coffee'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">  gulp.src(paths.coffee)</div><div class="line">    .pipe(coffee())</div><div class="line">    .pipe(gulp.dest(<span class="string">'assets/js'</span>))</div><div class="line">    .pipe(notify({ message: <span class="string">'Coffee task complete'</span> }));</div><div class="line">});</div><div class="line"><span class="comment">// Clean</span></div><div class="line">gulp.task(<span class="string">'clean'</span>, <span class="function"><span class="keyword">function</span><span class="params">(cb)</span> </span>{</div><div class="line">    del([<span class="string">'assets/assets/css'</span>, <span class="string">'assets/assets/js'</span>, <span class="string">'assets/assets/img'</span>], cb)</div><div class="line">});</div><div class="line"><span class="comment">// Default task</span></div><div class="line">gulp.task(<span class="string">'default'</span>, [<span class="string">'clean'</span>], <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">    gulp.start(<span class="string">'styles'</span>, <span class="string">'scripts'</span>, <span class="string">'images'</span>, <span class="string">'coffee'</span>, <span class="string">'watch'</span>);</div><div class="line">});</div><div class="line"><span class="comment">// Webserver</span></div><div class="line">gulp.task(<span class="string">'webserver'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">  connect.server({</div><div class="line">      livereload: <span class="literal">true</span></div><div class="line">  });</div><div class="line">});</div><div class="line"><span class="comment">// Watch</span></div><div class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">  <span class="comment">// Watch .scss files</span></div><div class="line">  gulp.watch(<span class="string">'sass/**/*.sass'</span>, [<span class="string">'styles'</span>]);</div><div class="line">  <span class="comment">// Watch .js files</span></div><div class="line">  gulp.watch(<span class="string">'js/**/*.js'</span>, [<span class="string">'scripts'</span>]);</div><div class="line">  <span class="comment">// Watch image files</span></div><div class="line">  gulp.watch(<span class="string">'images/**/*'</span>, [<span class="string">'images'</span>]);</div><div class="line">  <span class="comment">// Watch coffee files</span></div><div class="line">  gulp.watch(<span class="string">'coffee/**/**.coffee'</span>, [<span class="string">'coffee'</span>]);</div><div class="line">  <span class="comment">// Create LiveReload server</span></div><div class="line">  livereload.listen();</div><div class="line">  <span class="comment">// Watch any files in dist/, reload on change</span></div><div class="line">  gulp.watch([<span class="string">'assets/**'</span>]).on(<span class="string">'change'</span>, livereload.changed);</div><div class="line">});</div></pre></td></tr></table></figure>
+
+<h2 id="執行Gulp">執行Gulp</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp</div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bbandydd.github.io/blog/2015/07/30/gulp-intro/" data-id="nlh5l3ljg6wutpqj" class="article-share-link">Share</a>
+      
+        <a href="http://bbandydd.github.io/blog/2015/07/30/gulp-intro/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Gulp/">Gulp</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2015/08/01/coffeescript-intro/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CoffeeScript 介紹
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2015/07/23/f2e-question/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">前端工程師問題集</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Angular/">Angular</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Atom/">Atom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Cheerio/">Cheerio</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CoffeeScript/">CoffeeScript</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Compass/">Compass</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Crawler/">Crawler</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Css/">Css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Disqus/">Disqus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/E2E/">E2E</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ES6/">ES6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/F2E/">F2E</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Firebase/">Firebase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Github/">Github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Gulp/">Gulp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/HackMD/">HackMD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mac/">Mac</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Markdown/">Markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Nightwatch/">Nightwatch</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/NodeJS/">NodeJS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Prepros/">Prepros</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/RWD/">RWD</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Rails/">Rails</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/React/">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Rwd/">Rwd</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Sass/">Sass</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Scrum/">Scrum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Sitemap/">Sitemap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/SublimeText/">SublimeText</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/VueJS/">VueJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Webpack/">Webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Workshop/">Workshop</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/coServ/">coServ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/高雄前端社群/">高雄前端社群</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/Angular/" style="font-size: 18.00px;">Angular</a><a href="/blog/tags/Atom/" style="font-size: 10.00px;">Atom</a><a href="/blog/tags/Bootstrap/" style="font-size: 10.00px;">Bootstrap</a><a href="/blog/tags/Cheerio/" style="font-size: 10.00px;">Cheerio</a><a href="/blog/tags/CoffeeScript/" style="font-size: 20.00px;">CoffeeScript</a><a href="/blog/tags/Compass/" style="font-size: 10.00px;">Compass</a><a href="/blog/tags/Crawler/" style="font-size: 10.00px;">Crawler</a><a href="/blog/tags/Css/" style="font-size: 10.00px;">Css</a><a href="/blog/tags/Disqus/" style="font-size: 10.00px;">Disqus</a><a href="/blog/tags/E2E/" style="font-size: 10.00px;">E2E</a><a href="/blog/tags/ES6/" style="font-size: 12.00px;">ES6</a><a href="/blog/tags/F2E/" style="font-size: 16.00px;">F2E</a><a href="/blog/tags/Firebase/" style="font-size: 10.00px;">Firebase</a><a href="/blog/tags/Github/" style="font-size: 14.00px;">Github</a><a href="/blog/tags/Gulp/" style="font-size: 10.00px;">Gulp</a><a href="/blog/tags/HackMD/" style="font-size: 10.00px;">HackMD</a><a href="/blog/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/blog/tags/Javascript/" style="font-size: 10.00px;">Javascript</a><a href="/blog/tags/Mac/" style="font-size: 12.00px;">Mac</a><a href="/blog/tags/Markdown/" style="font-size: 12.00px;">Markdown</a><a href="/blog/tags/Nightwatch/" style="font-size: 12.00px;">Nightwatch</a><a href="/blog/tags/NodeJS/" style="font-size: 12.00px;">NodeJS</a><a href="/blog/tags/Prepros/" style="font-size: 10.00px;">Prepros</a><a href="/blog/tags/RWD/" style="font-size: 12.00px;">RWD</a><a href="/blog/tags/Rails/" style="font-size: 10.00px;">Rails</a><a href="/blog/tags/React/" style="font-size: 12.00px;">React</a><a href="/blog/tags/Rwd/" style="font-size: 14.00px;">Rwd</a><a href="/blog/tags/Sass/" style="font-size: 16.00px;">Sass</a><a href="/blog/tags/Scrum/" style="font-size: 10.00px;">Scrum</a><a href="/blog/tags/Sitemap/" style="font-size: 10.00px;">Sitemap</a><a href="/blog/tags/SublimeText/" style="font-size: 12.00px;">SublimeText</a><a href="/blog/tags/VueJS/" style="font-size: 10.00px;">VueJS</a><a href="/blog/tags/Webpack/" style="font-size: 10.00px;">Webpack</a><a href="/blog/tags/Workshop/" style="font-size: 16.00px;">Workshop</a><a href="/blog/tags/coServ/" style="font-size: 12.00px;">coServ</a><a href="/blog/tags/高雄前端社群/" style="font-size: 12.00px;">高雄前端社群</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/05/">May 2015</a><span class="archive-list-count">15</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2016/10/21/nightwatch-react-todo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/10/20/nightwatch-cheerio/">網路爬蟲 - Nightwatch + Cheerio = 神鵰俠侶</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/10/13/add-component-on-react-starter-kit/">React Starter Kit 新增component</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/09/29/isomorphic-universal/">Isomorphic Javascript 與 Universal Javascript</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/08/08/nightwatch-intro/">Nightwatch JS - Introduction</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Andy Tsai<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'andyTsaiBlog';
+  
+  var disqus_url = 'http://bbandydd.github.io/blog/2015/07/30/gulp-intro/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/blog/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/blog/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

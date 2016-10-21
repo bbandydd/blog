@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Angular學習Day4:ng-switch、ng-change、ng-include、ng-src、ng-href | Andy&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ng-switch
+ng-change
+ng-include
+ng-src
+ng-href">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular學習Day4:ng-switch、ng-change、ng-include、ng-src、ng-href">
+<meta property="og:url" content="http://bbandydd.github.io/blog/blog/2015/07/19/angular-practice4/">
+<meta property="og:site_name" content="Andy's Blog">
+<meta property="og:description" content="ng-switch
+ng-change
+ng-include
+ng-src
+ng-href">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular學習Day4:ng-switch、ng-change、ng-include、ng-src、ng-href">
+<meta name="twitter:description" content="ng-switch
+ng-change
+ng-include
+ng-src
+ng-href">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Andy&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog/css/style.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Andy&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://bbandydd.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-angular-practice4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2015/07/19/angular-practice4/" class="article-date">
+  <time datetime="2015-07-18T16:21:11.000Z" itemprop="datePublished">Jul 19 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Angular學習Day4:ng-switch、ng-change、ng-include、ng-src、ng-href
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>ng-switch</li>
+<li>ng-change</li>
+<li>ng-include</li>
+<li>ng-src</li>
+<li>ng-href</li>
+</ul>
+<a id="more"></a>
+<h2 id="ng-switch">ng-switch</h2>
+<ul>
+<li>可以根據ng-switch去篩選要選擇的內容。</li>
+<li>通常會和ng-option的下拉選單一起搭配使用。</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">ng-app</span>=<span class="value">"myApp"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"myController"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">select</span> <span class="attribute">ng-model</span>=<span class="value">"selected"</span> <span class="attribute">ng-options</span>=<span class="value">"product.name for product in products"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">""</span>&gt;</span>請選擇<span class="tag">&lt;/<span class="title">option</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="title">select</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-switch</span> <span class="attribute">on</span>=<span class="value">"selected.name"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">p</span> <span class="attribute">ng-switch-when</span>=<span class="value">"三明治"</span>&gt;</span>三明治<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">p</span> <span class="attribute">ng-switch-when</span>=<span class="value">"蛋糕"</span>&gt;</span>蛋糕<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">p</span> <span class="attribute">ng-switch-default</span>&gt;</span>咖啡<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">app.controller(<span class="string">'myController'</span>, <span class="function"><span class="keyword">function</span> <span class="title">myController</span><span class="params">(<span class="variable">$scope</span>)</span></span>{</div><div class="line">    <span class="variable">$scope</span>.products = [</div><div class="line">        { name: <span class="string">'咖啡'</span>, price: <span class="number">150</span> },</div><div class="line">        { name: <span class="string">'三明治'</span>, price: <span class="number">80</span>},</div><div class="line">        { name: <span class="string">'蛋糕'</span>, price: <span class="number">100</span>}</div><div class="line">    ];</div><div class="line">});</div></pre></td></tr></table></figure>
+
+<h2 id="ng-change">ng-change</h2>
+<ul>
+<li>當我們改變輸入的數值，就會執行ng-change裡的事情。</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">ng-app</span>=<span class="value">"myApp"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"myController"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">ng-model</span>=<span class="value">"confirmed"</span> <span class="attribute">ng-change</span>=<span class="value">"change()"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">br</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="title">br</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="title">br</span>&gt;</span><span class="tag">&lt;<span class="title">br</span>&gt;</span><span class="tag">&lt;<span class="title">br</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">select</span> <span class="attribute">ng-model</span>=<span class="value">"selectItem"</span> <span class="attribute">ng-options</span>=<span class="value">"item.counter for item in items"</span> <span class="attribute">ng-change</span>=<span class="value">"update()"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">""</span>&gt;</span>請選擇<span class="tag">&lt;/<span class="title">option</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="title">select</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">p</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">"myApp"</span>, []);</div><div class="line">app.controller(<span class="string">'myController'</span>, <span class="function"><span class="keyword">function</span> <span class="title">myController</span><span class="params">(<span class="variable">$scope</span>)</span></span>{</div><div class="line">    <span class="variable">$scope</span>.confirmed = <span class="keyword">true</span>;</div><div class="line">    <span class="variable">$scope</span>.count = <span class="number">0</span>;</div><div class="line">    <span class="variable">$scope</span>.change = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">        <span class="variable">$scope</span>.count++;</div><div class="line">    }</div><div class="line">    <span class="variable">$scope</span>.items = [</div><div class="line">        {counter: <span class="number">1</span>},</div><div class="line">        {counter: <span class="number">2</span>},</div><div class="line">        {counter: <span class="number">3</span>}</div><div class="line">    ];</div><div class="line">    <span class="variable">$scope</span>.update = <span class="function"><span class="keyword">function</span> <span class="params">()</span></span>{</div><div class="line">        angular.<span class="keyword">forEach</span>(<span class="variable">$scope</span>.items, <span class="function"><span class="keyword">function</span><span class="params">(value, index)</span></span>{</div><div class="line">            value.counter *= <span class="number">3</span>;</div><div class="line">        })</div><div class="line">    }</div><div class="line">});</div></pre></td></tr></table></figure>
+
+<h2 id="ng-include">ng-include</h2>
+<ul>
+<li>ng-include 是angular用來載入html的指令。</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">ng-app</span>=<span class="value">"myApp"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"myController"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">select</span> <span class="attribute">ng-model</span>=<span class="value">"selected"</span> <span class="attribute">ng-options</span>=<span class="value">"html.name for html in htmls"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">""</span>&gt;</span>請選擇<span class="tag">&lt;/<span class="title">option</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="title">select</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-include</span>=<span class="value">"selected.src"</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">app.controller(<span class="string">'myController'</span>, <span class="function"><span class="keyword">function</span> <span class="title">myController</span><span class="params">(<span class="variable">$scope</span>)</span></span>{</div><div class="line">    <span class="variable">$scope</span>.htmls = [</div><div class="line">        { name: <span class="string">'template1'</span>, src: <span class="string">'template1.html'</span> },</div><div class="line">        { name: <span class="string">'template2'</span>, src: <span class="string">'template2.html'</span>}</div><div class="line">    ]</div><div class="line">});</div></pre></td></tr></table></figure>
+
+<h2 id="ng-src">ng-src</h2>
+<ul>
+<li>ng-src是用來取代html中 img 標籤裡的src屬性。</li>
+<li>由於AngularJS是整個網站載完後才開始編譯，</li>
+<li>使用ng-src可以解決還沒載入完html發生的錯誤。</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">ng-app</span>=<span class="value">"myApp"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"myController"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-repeat</span>=<span class="value">"pic in pics"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="title">img</span> <span class="attribute">ng-src</span>=<span class="value">"{ { pic.src }}"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">app.controller(<span class="string">'myController'</span>, <span class="function"><span class="keyword">function</span> <span class="title">myController</span><span class="params">(<span class="variable">$scope</span>)</span></span>{</div><div class="line">    <span class="variable">$scope</span>.pics = [</div><div class="line">        {name: <span class="string">'pic1'</span>, src: <span class="string">'facebook.png'</span>},</div><div class="line">        {name: <span class="string">'pic2'</span>, src: <span class="string">'rss.png'</span>},</div><div class="line">        {name: <span class="string">'pic3'</span>, src: <span class="string">'twitter.png'</span>}</div><div class="line">    ]</div><div class="line">});</div></pre></td></tr></table></figure>
+
+<h2 id="ng-href">ng-href</h2>
+<ul>
+<li>ng-href是用來取代html中 a 標籤裡的href屬性。</li>
+<li>如果Angular還沒載入或載入失敗，會直接讓href讀取到{ { }}的內容，</li>
+<li>而a 標籤裡的href屬性無法辨識{ { }}，就會連結到404的錯誤頁面。</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">ng-app</span>=<span class="value">"myApp"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"myController"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-repeat</span>=<span class="value">"video in videos"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://www.youtube.com/watch?v={ { video.src }}}"</span>&gt;</span>{ { video.name }}<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>, []);</div><div class="line">app.controller(<span class="string">'myController'</span>, <span class="function"><span class="keyword">function</span> <span class="title">myController</span><span class="params">(<span class="variable">$scope</span>)</span></span>{</div><div class="line">    <span class="variable">$scope</span>.videos = [</div><div class="line">        {name: <span class="string">'video1'</span>, src: <span class="string">'8dttHnmtg4o'</span>},</div><div class="line">        {name: <span class="string">'video2'</span>, src: <span class="string">'rTGQZZgAK7U'</span>}</div><div class="line">    ]</div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bbandydd.github.io/blog/2015/07/19/angular-practice4/" data-id="mirn584ov0o1ztpi" class="article-share-link">Share</a>
+      
+        <a href="http://bbandydd.github.io/blog/2015/07/19/angular-practice4/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Angular/">Angular</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2015/07/23/f2e-question/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          前端工程師問題集
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2015/07/18/angular-practice3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Angular學習Day3:ng-init、ng-repeat、input、ng-options</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Angular/">Angular</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Atom/">Atom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Cheerio/">Cheerio</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CoffeeScript/">CoffeeScript</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Compass/">Compass</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Crawler/">Crawler</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Css/">Css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Disqus/">Disqus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/E2E/">E2E</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ES6/">ES6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/F2E/">F2E</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Firebase/">Firebase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Github/">Github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Gulp/">Gulp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/HackMD/">HackMD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mac/">Mac</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Markdown/">Markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Nightwatch/">Nightwatch</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/NodeJS/">NodeJS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Prepros/">Prepros</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/RWD/">RWD</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Rails/">Rails</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/React/">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Rwd/">Rwd</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Sass/">Sass</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Scrum/">Scrum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Sitemap/">Sitemap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/SublimeText/">SublimeText</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/VueJS/">VueJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Webpack/">Webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Workshop/">Workshop</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/coServ/">coServ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/高雄前端社群/">高雄前端社群</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/Angular/" style="font-size: 18.00px;">Angular</a><a href="/blog/tags/Atom/" style="font-size: 10.00px;">Atom</a><a href="/blog/tags/Bootstrap/" style="font-size: 10.00px;">Bootstrap</a><a href="/blog/tags/Cheerio/" style="font-size: 10.00px;">Cheerio</a><a href="/blog/tags/CoffeeScript/" style="font-size: 20.00px;">CoffeeScript</a><a href="/blog/tags/Compass/" style="font-size: 10.00px;">Compass</a><a href="/blog/tags/Crawler/" style="font-size: 10.00px;">Crawler</a><a href="/blog/tags/Css/" style="font-size: 10.00px;">Css</a><a href="/blog/tags/Disqus/" style="font-size: 10.00px;">Disqus</a><a href="/blog/tags/E2E/" style="font-size: 10.00px;">E2E</a><a href="/blog/tags/ES6/" style="font-size: 12.00px;">ES6</a><a href="/blog/tags/F2E/" style="font-size: 16.00px;">F2E</a><a href="/blog/tags/Firebase/" style="font-size: 10.00px;">Firebase</a><a href="/blog/tags/Github/" style="font-size: 14.00px;">Github</a><a href="/blog/tags/Gulp/" style="font-size: 10.00px;">Gulp</a><a href="/blog/tags/HackMD/" style="font-size: 10.00px;">HackMD</a><a href="/blog/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/blog/tags/Javascript/" style="font-size: 10.00px;">Javascript</a><a href="/blog/tags/Mac/" style="font-size: 12.00px;">Mac</a><a href="/blog/tags/Markdown/" style="font-size: 12.00px;">Markdown</a><a href="/blog/tags/Nightwatch/" style="font-size: 12.00px;">Nightwatch</a><a href="/blog/tags/NodeJS/" style="font-size: 12.00px;">NodeJS</a><a href="/blog/tags/Prepros/" style="font-size: 10.00px;">Prepros</a><a href="/blog/tags/RWD/" style="font-size: 12.00px;">RWD</a><a href="/blog/tags/Rails/" style="font-size: 10.00px;">Rails</a><a href="/blog/tags/React/" style="font-size: 12.00px;">React</a><a href="/blog/tags/Rwd/" style="font-size: 14.00px;">Rwd</a><a href="/blog/tags/Sass/" style="font-size: 16.00px;">Sass</a><a href="/blog/tags/Scrum/" style="font-size: 10.00px;">Scrum</a><a href="/blog/tags/Sitemap/" style="font-size: 10.00px;">Sitemap</a><a href="/blog/tags/SublimeText/" style="font-size: 12.00px;">SublimeText</a><a href="/blog/tags/VueJS/" style="font-size: 10.00px;">VueJS</a><a href="/blog/tags/Webpack/" style="font-size: 10.00px;">Webpack</a><a href="/blog/tags/Workshop/" style="font-size: 16.00px;">Workshop</a><a href="/blog/tags/coServ/" style="font-size: 12.00px;">coServ</a><a href="/blog/tags/高雄前端社群/" style="font-size: 12.00px;">高雄前端社群</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/05/">May 2015</a><span class="archive-list-count">15</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2016/10/21/nightwatch-react-todo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/10/20/nightwatch-cheerio/">網路爬蟲 - Nightwatch + Cheerio = 神鵰俠侶</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/10/13/add-component-on-react-starter-kit/">React Starter Kit 新增component</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/09/29/isomorphic-universal/">Isomorphic Javascript 與 Universal Javascript</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/08/08/nightwatch-intro/">Nightwatch JS - Introduction</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Andy Tsai<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'andyTsaiBlog';
+  
+  var disqus_url = 'http://bbandydd.github.io/blog/2015/07/19/angular-practice4/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/blog/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/blog/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

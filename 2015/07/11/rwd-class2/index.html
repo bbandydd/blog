@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>RWD課程2 - Mobile RWD | Andy&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Week2 - Mobile RWD
+
+參考連結
+mobile、desktop first
+chrome dev tools mobile testing
+box-sizing、css3 selector
+homework： Basic Responsive Layout">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RWD課程2 - Mobile RWD">
+<meta property="og:url" content="http://bbandydd.github.io/blog/blog/2015/07/11/rwd-class2/">
+<meta property="og:site_name" content="Andy's Blog">
+<meta property="og:description" content="Week2 - Mobile RWD
+
+參考連結
+mobile、desktop first
+chrome dev tools mobile testing
+box-sizing、css3 selector
+homework： Basic Responsive Layout">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RWD課程2 - Mobile RWD">
+<meta name="twitter:description" content="Week2 - Mobile RWD
+
+參考連結
+mobile、desktop first
+chrome dev tools mobile testing
+box-sizing、css3 selector
+homework： Basic Responsive Layout">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Andy&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog/css/style.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Andy&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://bbandydd.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-rwd-class2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2015/07/11/rwd-class2/" class="article-date">
+  <time datetime="2015-07-11T06:20:30.000Z" itemprop="datePublished">Jul 11 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      RWD課程2 - Mobile RWD
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Week2_-_Mobile_RWD">Week2 - Mobile RWD</h2>
+<ul>
+<li><a href="https://liao-talk.hackpad.com/Week2-Mobile-RWD-xeGvrOEDAn8" target="_blank" rel="external">參考連結</a></li>
+<li>mobile、desktop first</li>
+<li>chrome dev tools mobile testing</li>
+<li>box-sizing、css3 selector</li>
+<li>homework： Basic Responsive Layout</li>
+</ul>
+<a id="more"></a>
+<h2 id="Chrome_開發工具課程">Chrome 開發工具課程</h2>
+<ul>
+<li><a href="http://discover-devtools.codeschool.com" target="_blank" rel="external">Code School</a></li>
+</ul>
+<h2 id="前端設計">前端設計</h2>
+<ul>
+<li>針對動畫部分做處理搭配Git、Github</li>
+</ul>
+<h2 id="前端工程">前端工程</h2>
+<ul>
+<li>前端工程針對Javascript、Ajax、NodeJS</li>
+</ul>
+<h2 id="處理API工具">處理API工具</h2>
+<ul>
+<li>PostMan</li>
+</ul>
+<h2 id="RWD核心_@media">RWD核心 @media</h2>
+<ul>
+<li>@media only screen and (max-width:768px)</li>
+<li>可以縮寫成 @media(max-width:768px)</li>
+<li>初學先從解析度大到小寫</li>
+<li>Ipad 768 * 1024</li>
+<li>Iphone 5橫式 320 * 569</li>
+<li>常見手機橫式 320 * 480</li>
+</ul>
+<h2 id="chrome_mobile_dev_setting">chrome mobile dev setting</h2>
+<ul>
+<li>測試畫面在手機上的顯示</li>
+</ul>
+<h2 id="DIV特性">DIV特性</h2>
+<ul>
+<li>DIV是塊狀元素</li>
+<li>DIV並排需要用到float</li>
+</ul>
+<h2 id="推間隔習慣">推間隔習慣</h2>
+<ul>
+<li>第一個元素用padding-top</li>
+<li>第二個元素開始用margin-bottom</li>
+<li>方便以後檢查間距</li>
+<li>margin-top較常有Bug(少用)</li>
+</ul>
+<h2 id="單欄雙欄呈現">單欄雙欄呈現</h2>
+<ul>
+<li>Div使用float: left/none 及 width: 50%/100% 切換</li>
+<li>float一定要給寬度才會呈現</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"wrap"</span>&gt;</div><div class="line">  &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"sidebar"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</div><div class="line">  &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"content"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="class">.wrap</span><span class="rules">{</span></div><div class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">300px</span></span></span>;</div><div class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;</div><div class="line">  <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span> auto</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="class">.sidebar</span><span class="rules">{</span></div><div class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">40%</span></span></span>;</div><div class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">20px</span></span></span>;</div><div class="line">  <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;</div><div class="line">  <span class="rule"><span class="attribute">background-color</span>:<span class="value"> pink</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="class">.content</span><span class="rules">{</span></div><div class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">60%</span></span></span>;</div><div class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">20px</span></span></span>;</div><div class="line">  <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;</div><div class="line">  <span class="rule"><span class="attribute">background-color</span>:<span class="value"> yellow</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="at_rule">@<span class="keyword">media(max-width:</span> <span class="number">768px</span>)</span>{</div><div class="line">  <span class="class">.sidebar</span>, <span class="class">.content</span><span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">float</span>:<span class="value"> none</span></span>;</div><div class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;</div><div class="line">  <span class="rule">}</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h2 id="img_RWD_reset">img RWD reset</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">img</span><span class="rules">{</span></div><div class="line">	<span class="rule"><span class="attribute">max-width</span>:<span class="value"> <span class="number">100%</span></span></span>;</div><div class="line">	<span class="rule"><span class="attribute">height</span>:<span class="value"> auto</span></span>;</div><div class="line"><span class="rule">}</span></div></pre></td></tr></table></figure>
+
+<h2 id="Mobile設計要點">Mobile設計要點</h2>
+<ul>
+<li>互動按鈕是否夠大足以讓手指瞄準該按鈕 (height: 44px 比較好點選)<ul>
+<li>可以利用 a -&gt; display: block，讓整個都可以點選</li>
+</ul>
+</li>
+<li>mobile沒有hover事件，所以需要使用active、focus事件</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">a</span><span class="pseudo">:hover</span>,<span class="tag">a</span><span class="pseudo">:active</span>,<span class="tag">a</span><span class="pseudo">:focus</span><span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#fff</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value"><span class="hexcolor">#000</span></span></span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<ul>
+<li>不要太多資訊佔滿版面</li>
+<li>選單改用漢堡選單</li>
+</ul>
+<h2 id="瀏覽器市佔率查詢">瀏覽器市佔率查詢</h2>
+<ul>
+<li><a href="http://gs.statcounter.com" target="_blank" rel="external">statcounter</a></li>
+</ul>
+<h2 id="RWD_LOGO設計">RWD LOGO設計</h2>
+<ul>
+<li>藉由修改h1的background-image達到手機上看到較小的LOGO圖片</li>
+</ul>
+<h2 id="RWD小技巧">RWD小技巧</h2>
+<ul>
+<li>border: none</li>
+<li>height: auto</li>
+</ul>
+<h2 id="設計與規劃_Mobile_Web_使用者介面">設計與規劃 Mobile Web 使用者介面</h2>
+<ul>
+<li><a href="http://mediaqueri.es" target="_blank" rel="external">資訊流動線規劃(MediaQueries)</a></li>
+<li>培養Sense</li>
+<li>搭配<a href="https://chrome.google.com/webstore/detail/responsive-inspector/memcdolmmnmnleeiodllgpibdjlkbpim" target="_blank" rel="external">responsive inspector</a>服用</li>
+<li>斷點(Breakpoint)規劃 (一行文字僅能看20~40字)</li>
+<li>隱藏影響瀏覽動線資訊</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bbandydd.github.io/blog/2015/07/11/rwd-class2/" data-id="p96yiey77wmpgwl2" class="article-share-link">Share</a>
+      
+        <a href="http://bbandydd.github.io/blog/2015/07/11/rwd-class2/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Rwd/">Rwd</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2015/07/16/rwd-class3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          RWD課程3 - 產品規劃
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2015/07/09/angular-hospitalsupport/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Angular實作 - 八仙塵爆傷者開放資料查詢</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Angular/">Angular</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Atom/">Atom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Cheerio/">Cheerio</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CoffeeScript/">CoffeeScript</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Compass/">Compass</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Crawler/">Crawler</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Css/">Css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Disqus/">Disqus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/E2E/">E2E</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ES6/">ES6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/F2E/">F2E</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Firebase/">Firebase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Github/">Github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Gulp/">Gulp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/HackMD/">HackMD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mac/">Mac</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Markdown/">Markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Nightwatch/">Nightwatch</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/NodeJS/">NodeJS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Prepros/">Prepros</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/RWD/">RWD</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Rails/">Rails</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/React/">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Rwd/">Rwd</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Sass/">Sass</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Scrum/">Scrum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Sitemap/">Sitemap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/SublimeText/">SublimeText</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/VueJS/">VueJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Webpack/">Webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Workshop/">Workshop</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/coServ/">coServ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/高雄前端社群/">高雄前端社群</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/Angular/" style="font-size: 18.00px;">Angular</a><a href="/blog/tags/Atom/" style="font-size: 10.00px;">Atom</a><a href="/blog/tags/Bootstrap/" style="font-size: 10.00px;">Bootstrap</a><a href="/blog/tags/Cheerio/" style="font-size: 10.00px;">Cheerio</a><a href="/blog/tags/CoffeeScript/" style="font-size: 20.00px;">CoffeeScript</a><a href="/blog/tags/Compass/" style="font-size: 10.00px;">Compass</a><a href="/blog/tags/Crawler/" style="font-size: 10.00px;">Crawler</a><a href="/blog/tags/Css/" style="font-size: 10.00px;">Css</a><a href="/blog/tags/Disqus/" style="font-size: 10.00px;">Disqus</a><a href="/blog/tags/E2E/" style="font-size: 10.00px;">E2E</a><a href="/blog/tags/ES6/" style="font-size: 12.00px;">ES6</a><a href="/blog/tags/F2E/" style="font-size: 16.00px;">F2E</a><a href="/blog/tags/Firebase/" style="font-size: 10.00px;">Firebase</a><a href="/blog/tags/Github/" style="font-size: 14.00px;">Github</a><a href="/blog/tags/Gulp/" style="font-size: 10.00px;">Gulp</a><a href="/blog/tags/HackMD/" style="font-size: 10.00px;">HackMD</a><a href="/blog/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/blog/tags/Javascript/" style="font-size: 10.00px;">Javascript</a><a href="/blog/tags/Mac/" style="font-size: 12.00px;">Mac</a><a href="/blog/tags/Markdown/" style="font-size: 12.00px;">Markdown</a><a href="/blog/tags/Nightwatch/" style="font-size: 12.00px;">Nightwatch</a><a href="/blog/tags/NodeJS/" style="font-size: 12.00px;">NodeJS</a><a href="/blog/tags/Prepros/" style="font-size: 10.00px;">Prepros</a><a href="/blog/tags/RWD/" style="font-size: 12.00px;">RWD</a><a href="/blog/tags/Rails/" style="font-size: 10.00px;">Rails</a><a href="/blog/tags/React/" style="font-size: 12.00px;">React</a><a href="/blog/tags/Rwd/" style="font-size: 14.00px;">Rwd</a><a href="/blog/tags/Sass/" style="font-size: 16.00px;">Sass</a><a href="/blog/tags/Scrum/" style="font-size: 10.00px;">Scrum</a><a href="/blog/tags/Sitemap/" style="font-size: 10.00px;">Sitemap</a><a href="/blog/tags/SublimeText/" style="font-size: 12.00px;">SublimeText</a><a href="/blog/tags/VueJS/" style="font-size: 10.00px;">VueJS</a><a href="/blog/tags/Webpack/" style="font-size: 10.00px;">Webpack</a><a href="/blog/tags/Workshop/" style="font-size: 16.00px;">Workshop</a><a href="/blog/tags/coServ/" style="font-size: 12.00px;">coServ</a><a href="/blog/tags/高雄前端社群/" style="font-size: 12.00px;">高雄前端社群</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/05/">May 2015</a><span class="archive-list-count">15</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2016/10/21/nightwatch-react-todo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/10/20/nightwatch-cheerio/">網路爬蟲 - Nightwatch + Cheerio = 神鵰俠侶</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/10/13/add-component-on-react-starter-kit/">React Starter Kit 新增component</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/09/29/isomorphic-universal/">Isomorphic Javascript 與 Universal Javascript</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/08/08/nightwatch-intro/">Nightwatch JS - Introduction</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Andy Tsai<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'andyTsaiBlog';
+  
+  var disqus_url = 'http://bbandydd.github.io/blog/2015/07/11/rwd-class2/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/blog/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/blog/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>coServ Workshop 淺談Sass及RWD | Andy&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="RWD 目前在前端網頁已是不可或缺的角色，如何在製作時更有系統性的去規劃，也是前端所需克服的問題
+而 Sass 近期也常受到討論，被認為是加速開發 CSS 的良好工具本次主題結合這兩個前端熱門議題，向大家分享如何應用coServ 幫助開發者在RWD、Sass 上做更快速及系統性的開發！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="coServ Workshop 淺談Sass及RWD">
+<meta property="og:url" content="http://bbandydd.github.io/blog/blog/2015/05/21/coserv/">
+<meta property="og:site_name" content="Andy's Blog">
+<meta property="og:description" content="RWD 目前在前端網頁已是不可或缺的角色，如何在製作時更有系統性的去規劃，也是前端所需克服的問題
+而 Sass 近期也常受到討論，被認為是加速開發 CSS 的良好工具本次主題結合這兩個前端熱門議題，向大家分享如何應用coServ 幫助開發者在RWD、Sass 上做更快速及系統性的開發！">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="coServ Workshop 淺談Sass及RWD">
+<meta name="twitter:description" content="RWD 目前在前端網頁已是不可或缺的角色，如何在製作時更有系統性的去規劃，也是前端所需克服的問題
+而 Sass 近期也常受到討論，被認為是加速開發 CSS 的良好工具本次主題結合這兩個前端熱門議題，向大家分享如何應用coServ 幫助開發者在RWD、Sass 上做更快速及系統性的開發！">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Andy&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog/css/style.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Andy&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://bbandydd.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-coserv" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2015/05/21/coserv/" class="article-date">
+  <time datetime="2015-05-21T14:57:26.000Z" itemprop="datePublished">May 21 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      coServ Workshop 淺談Sass及RWD
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>RWD 目前在前端網頁已是不可或缺的角色，如何在製作時更有系統性的去規劃，<br>也是前端所需克服的問題</p>
+<p>而 Sass 近期也常受到討論，被認為是加速開發 CSS 的良好工具<br>本次主題結合這兩個前端熱門議題，向大家分享如何應用<br>coServ 幫助開發者在RWD、Sass 上做更快速及系統性的開發！</p>
+<a id="more"></a>
+<h2 id="1-_JASS_in_coServ_(JASS)">1. JASS in coServ (JASS)</h2>
+<iframe src="http://www.slideshare.net/slideshow/embed_code/key/iwN6TvMs9CkRRr" width="600" height="400" frameborder="0" allowfullscreen></iframe>
+
+<h2 id="nodeJS_原生_Css管理套件">nodeJS 原生 Css管理套件</h2>
+<ul>
+<li>與SASS類似<ul>
+<li>變數、混用、擴充、巢狀</li>
+</ul>
+</li>
+<li>可快速修改網站中的CSS樣式<ul>
+<li>例如客戶想改變顏色，僅需要修改變數中的顏色，即可修改整個站台</li>
+</ul>
+</li>
+</ul>
+<h2 id="功能一_Variables(變數)">功能一 Variables(變數)</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;%</div><div class="line">  var fontStack = <span class="string">'Helvetica, sans-serif'</span>,</div><div class="line">    linkColor_1 = <span class="string">'#fff'</span>,</div><div class="line">    linkColor_2 = <span class="string">'#0066ff'</span>,</div><div class="line">    linkColor_3 = <span class="string">'#49CA2D'</span>,</div><div class="line">    primaryColor = <span class="string">'#333'</span>,</div><div class="line">    primarybg_1 = <span class="string">'#ddd'</span>,</div><div class="line">    primarybg_2 = <span class="string">'#fff'</span>,</div><div class="line">    li_hover_bg = <span class="string">'#ffddaa'</span>,</div><div class="line">    primaryFontSize = <span class="string">'16px'</span>,</div><div class="line">    boxPadding = <span class="string">'15px'</span>,</div><div class="line">    imgPath = <span class="string">'../../jass_rwd/image/'</span>,</div><div class="line">    content_minh = <span class="string">'700px'</span>,</div><div class="line">    fontp = {<span class="string">'font-family'</span>: <span class="string">'Helvetica, sans-serif'</span>, <span class="string">'color'</span>: <span class="string">'red'</span>};</div><div class="line"><span class="variable">%&gt;</span></div><div class="line">h3{</div><div class="line">  &lt;<span class="variable">%=</span>jass.p(fontp)<span class="variable">%&gt;</span></div><div class="line">}</div><div class="line">.content a{</div><div class="line">  <span class="keyword">color</span>: &lt;<span class="variable">%=</span>linkColor_3<span class="variable">%&gt;</span></div><div class="line">}</div><div class="line">.link a{</div><div class="line">  <span class="keyword">color</span>: &lt;<span class="variable">%=</span>linkColor_2<span class="variable">%&gt;</span></div><div class="line">}</div><div class="line">.footer a{</div><div class="line">  <span class="keyword">color</span>: &lt;<span class="variable">%=</span>linkColor_1<span class="variable">%&gt;</span></div><div class="line">}</div><div class="line">.footer{</div><div class="line">  background: &lt;<span class="variable">%=</span>primaryColor<span class="variable">%&gt;</span></div><div class="line">  height: <span class="number">80</span>px</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h3 id="提醒:">提醒:</h3>
+<ul>
+<li>使用JSON格式才需要使用jass.p()</li>
+</ul>
+<h2 id="功能二_Ｍixins(混用)">功能二 Ｍixins(混用)</h2>
+<ul>
+<li>JASS 中 mixins 是以函數處理，所以還可以在函數內做額外的運算（處理）。這是 SASS 做不到的。</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;%</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">borderRadius</span><span class="params">(radius)</span></span>{</div><div class="line">    <span class="keyword">return</span>{</div><div class="line">      <span class="string">'-webkit-border-radius'</span>: radius,</div><div class="line">      <span class="string">'-moz-border-radius'</span>: radius,</div><div class="line">      <span class="string">'-ms-border-radius'</span>: radius,</div><div class="line">      <span class="string">'border-radius'</span>: radius</div><div class="line">    };</div><div class="line">  };</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">boxShadow</span><span class="params">(shadow)</span></span>{</div><div class="line">    <span class="keyword">return</span>{</div><div class="line">      <span class="string">'-webkit-box-shadow'</span>: shadow,</div><div class="line">      <span class="string">'-moz-box-shadow'</span>: shadow,</div><div class="line">      <span class="string">'box-shadow'</span>: shadow</div><div class="line">    };</div><div class="line">  };</div><div class="line">%&gt;</div><div class="line">.circleImg{</div><div class="line">  width: <span class="number">50</span>px;</div><div class="line">  height: <span class="number">50</span>px;</div><div class="line">  &lt;%=jass.p(borderRadius(<span class="string">'50%'</span>))%&gt;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h2 id="功能三_Extend(擴充)">功能三 Extend(擴充)</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;%</div><div class="line">  var msgBox = {</div><div class="line">    border: <span class="string">'1px solid #ccc'</span>,</div><div class="line">    padding: <span class="string">'10px'</span>,</div><div class="line">    <span class="keyword">color</span>: <span class="string">'#333'</span>,</div><div class="line">    width: <span class="string">'30%'</span></div><div class="line">  };</div><div class="line"><span class="variable">%&gt;</span></div><div class="line">.message{</div><div class="line">  &lt;<span class="variable">%=</span>jass.p(msgBox)<span class="variable">%&gt;</span>;</div><div class="line">  &lt;<span class="variable">%=</span>jass.p(boxShadow(<span class="string">'0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)'</span>))<span class="variable">%&gt;</span>;</div><div class="line">}</div><div class="line">.fail{</div><div class="line">  &lt;<span class="variable">%=</span>jass.p(msgBox)<span class="variable">%&gt;</span>;</div><div class="line">  border-<span class="keyword">color</span>: red;</div><div class="line">  &lt;<span class="variable">%=</span>jass.p(boxShadow(<span class="string">'0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)'</span>))<span class="variable">%&gt;</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h2 id="巢狀疊套">巢狀疊套</h2>
+<ul>
+<li>jass.r() 可以用來建立一條 CSS 規則</li>
+<li>在下面的範例中，我們利用 jass.r() 建立了五條 CSS 規則，而且將其中 r_ul、 r_li、r_li_hover、r_a 四條規則附加到規則 rMenu 之下。最後再將 rMenu 印出，就能得到所要的結果。</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;%</div><div class="line">  var li_style = {</div><div class="line">    display: <span class="string">'inline-block'</span>,</div><div class="line">    padding:boxPadding,</div><div class="line">    <span class="string">'list-style'</span>: <span class="string">'none'</span></div><div class="line">  };</div><div class="line">  var rMenu = jass.r(<span class="string">'.menu'</span>),</div><div class="line">        r_ul = jass.r(<span class="string">'ul'</span>, {<span class="string">'margin-bottom'</span> :<span class="string">'10px'</span>, padding: <span class="number">0</span>}),</div><div class="line">        r_li = jass.r(<span class="string">'li'</span>, li_style),</div><div class="line">        r_li_hover = jass.r(<span class="string">'li:hover'</span>, {background:li_hover_bg}),</div><div class="line">        r_a = jass.r(<span class="string">'a'</span>, {<span class="keyword">color</span>: linkColor_2, <span class="string">'font-size'</span>: primaryFontSize});</div><div class="line">  rMenu.add( [r_ul, r_li, r_a,r_li_hover] );</div><div class="line"></div><div class="line"><span class="variable">%&gt;</span></div><div class="line">&lt;<span class="variable">%=</span> rMenu.toString(); <span class="variable">%&gt;</span></div></pre></td></tr></table></figure>
+
+<h2 id="練習時間">練習時間</h2>
+<ul>
+<li>利用JASS製作一個按鈕樣式</li>
+<li>需使用的功能<ul>
+<li>Variables(變數)</li>
+<li>Mixins(混用)</li>
+<li>Extend(擴充)</li>
+</ul>
+</li>
+</ul>
+<h3 id="注意">注意</h3>
+<ul>
+<li>若發現站台CSS失效，代表jass有誤要仔細檢查哪裡錯誤，練習的過程常常發生CSS失效，往往是少了單引號、字打錯、使用未宣告的function或變數、換行錯誤等，只要一個地方錯，整個站台的CSS就會失效</li>
+</ul>
+<h2 id="2-_RWD_in_coSev">2. RWD in coSev</h2>
+<iframe src="http://www.slideshare.net/slideshow/embed_code/key/G0f3ZWqogJvZRD" width="600" height="400" frameborder="0" allowfullscreen></iframe>
+
+<h2 id="傳統作法">傳統作法</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="variable">@media</span> only screen <span class="keyword">and</span> (max-<span class="symbol">width:</span><span class="number">768</span>px){</div><div class="line">	<span class="regexp">/*螢幕寬度768載入*/</span></div><div class="line">}</div><div class="line"><span class="variable">@media</span> only screen <span class="keyword">and</span> (max-<span class="symbol">width:</span><span class="number">600</span>px){</div><div class="line">	<span class="regexp">/*螢幕寬度600載入*/</span></div><div class="line">}</div><div class="line"><span class="variable">@media</span> only screen <span class="keyword">and</span> (max-<span class="symbol">width:</span><span class="number">480</span>px){</div><div class="line">	<span class="regexp">/*螢幕寬度480載入*/</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h2 id="coServ作法">coServ作法</h2>
+<ul>
+<li>在www/sites.json中設定樣板(方法1)</li>
+<li>在Javascript裏動態載入指定的CSS(方法2)</li>
+</ul>
+<h2 id="方法1">方法1</h2>
+<p>更改sites.json檔案結構</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">	"<span class="attribute">127.0.0.1</span>":<span class="value">{</span></div><div class="line">		"<span class="attribute">theme</span>":<span class="value">{</span></div><div class="line">			"<span class="attribute">desktop</span>": <span class="value"><span class="string">"desktop_theme"</span></span>,</div><div class="line">			"<span class="attribute">tablet</span>": <span class="value"><span class="string">"tablet_theme"</span></span>,</div><div class="line">			"<span class="attribute">mobile</span>": <span class="value"><span class="string">"mobile_theme"</span></span></div><div class="line">		}</div><div class="line">	}</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h3 id="注意-1">注意</h3>
+<p>加入別人Theme記得要先改CSS讓他重新Loading, 例如加個顏色</p>
+<p>有改site.json 記得要重啟server</p>
+<h2 id="方法2">方法2</h2>
+<ul>
+<li>在coServ中每個網頁都有區塊變數(bi)</li>
+<li>client:判斷子端屬於何種裝置</li>
+<li>用Javascript去抓取bi.client.category來判斷裝置</li>
+<li>bi.client.category參數：<ul>
+<li>‘desktop’</li>
+<li>‘tablet’</li>
+<li>‘mobile’</li>
+</ul>
+</li>
+</ul>
+<h2 id="在js裡判定">在js裡判定</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">ctrl.startup = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">  <span class="keyword">var</span> bi = <span class="string">'&lt;%=JSON.stringify(bi)%&gt;'</span>;</div><div class="line">  <span class="keyword">var</span> bi_obj = <span class="built_in">JSON</span>.parse(bi);</div><div class="line">  <span class="keyword">var</span> category = bi_obj.client.category;</div><div class="line">  <span class="keyword">var</span> title_label = ctrl.sel(<span class="string">'#title-label'</span>);</div><div class="line">  title_label.text(category);</div><div class="line">  <span class="keyword">switch</span>(category){</div><div class="line">    <span class="keyword">case</span> <span class="string">'desktop'</span>:</div><div class="line">      title_label.addClass(<span class="string">"desktop-layout"</span>);</div><div class="line">      <span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> <span class="string">'tablet'</span>:</div><div class="line">      title_label.addClass(<span class="string">"table-layout"</span>);</div><div class="line">      <span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> <span class="string">'mobile'</span>:</div><div class="line">      title_label.addClass(<span class="string">"mobile-layout"</span>);</div><div class="line">      <span class="keyword">break</span>;</div><div class="line">  }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h2 id="直接在html裡面判定">直接在html裡面判定</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="vbscript">&lt;% <span class="keyword">if</span> (bi.client.category === <span class="comment">'desktop') { %&gt;</span></span></div><div class="line">  <span class="tag">&lt;<span class="title">h2</span> <span class="attribute">class</span>=<span class="value">"desktop-layout"</span>&gt;</span>This is desktop<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></div><div class="line"><span class="vbscript">&lt;% }<span class="keyword">else</span> <span class="keyword">if</span> (bi.client.category === <span class="comment">'tablet'){ %&gt;</span></span></div><div class="line">  <span class="tag">&lt;<span class="title">h2</span> <span class="attribute">class</span>=<span class="value">"tablet-layout"</span>&gt;</span>This is tablet<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></div><div class="line"><span class="vbscript">&lt;% }<span class="keyword">else</span> <span class="keyword">if</span> (bi.client.category === <span class="comment">'mobile'){ %&gt;</span></span></div><div class="line">  <span class="tag">&lt;<span class="title">h2</span> <span class="attribute">class</span>=<span class="value">"mobile-layout"</span>&gt;</span>This is mobile<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></div><div class="line"><span class="vbscript">&lt;% } %&gt;</span></div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bbandydd.github.io/blog/2015/05/21/coserv/" data-id="ghyrfqdlivp540v7" class="article-share-link">Share</a>
+      
+        <a href="http://bbandydd.github.io/blog/2015/05/21/coserv/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/NodeJS/">NodeJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Workshop/">Workshop</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/coServ/">coServ</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2015/05/24/first-rails/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Rails Bridge - 初探Rails 加分題
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2015/05/16/iterm-zsh/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Mac 終端機iTerm + zsh agonster主題優化</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Angular/">Angular</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Atom/">Atom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Cheerio/">Cheerio</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CoffeeScript/">CoffeeScript</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Compass/">Compass</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Crawler/">Crawler</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Css/">Css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Disqus/">Disqus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/E2E/">E2E</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ES6/">ES6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/F2E/">F2E</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Firebase/">Firebase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Github/">Github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Gulp/">Gulp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/HackMD/">HackMD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mac/">Mac</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Markdown/">Markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Nightwatch/">Nightwatch</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/NodeJS/">NodeJS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Prepros/">Prepros</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/RWD/">RWD</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Rails/">Rails</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/React/">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Rwd/">Rwd</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Sass/">Sass</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Scrum/">Scrum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Sitemap/">Sitemap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/SublimeText/">SublimeText</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/VueJS/">VueJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Webpack/">Webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Workshop/">Workshop</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/coServ/">coServ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/高雄前端社群/">高雄前端社群</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/Angular/" style="font-size: 18.00px;">Angular</a><a href="/blog/tags/Atom/" style="font-size: 10.00px;">Atom</a><a href="/blog/tags/Bootstrap/" style="font-size: 10.00px;">Bootstrap</a><a href="/blog/tags/Cheerio/" style="font-size: 10.00px;">Cheerio</a><a href="/blog/tags/CoffeeScript/" style="font-size: 20.00px;">CoffeeScript</a><a href="/blog/tags/Compass/" style="font-size: 10.00px;">Compass</a><a href="/blog/tags/Crawler/" style="font-size: 10.00px;">Crawler</a><a href="/blog/tags/Css/" style="font-size: 10.00px;">Css</a><a href="/blog/tags/Disqus/" style="font-size: 10.00px;">Disqus</a><a href="/blog/tags/E2E/" style="font-size: 10.00px;">E2E</a><a href="/blog/tags/ES6/" style="font-size: 12.00px;">ES6</a><a href="/blog/tags/F2E/" style="font-size: 16.00px;">F2E</a><a href="/blog/tags/Firebase/" style="font-size: 10.00px;">Firebase</a><a href="/blog/tags/Github/" style="font-size: 14.00px;">Github</a><a href="/blog/tags/Gulp/" style="font-size: 10.00px;">Gulp</a><a href="/blog/tags/HackMD/" style="font-size: 10.00px;">HackMD</a><a href="/blog/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/blog/tags/Javascript/" style="font-size: 10.00px;">Javascript</a><a href="/blog/tags/Mac/" style="font-size: 12.00px;">Mac</a><a href="/blog/tags/Markdown/" style="font-size: 12.00px;">Markdown</a><a href="/blog/tags/Nightwatch/" style="font-size: 12.00px;">Nightwatch</a><a href="/blog/tags/NodeJS/" style="font-size: 12.00px;">NodeJS</a><a href="/blog/tags/Prepros/" style="font-size: 10.00px;">Prepros</a><a href="/blog/tags/RWD/" style="font-size: 12.00px;">RWD</a><a href="/blog/tags/Rails/" style="font-size: 10.00px;">Rails</a><a href="/blog/tags/React/" style="font-size: 12.00px;">React</a><a href="/blog/tags/Rwd/" style="font-size: 14.00px;">Rwd</a><a href="/blog/tags/Sass/" style="font-size: 16.00px;">Sass</a><a href="/blog/tags/Scrum/" style="font-size: 10.00px;">Scrum</a><a href="/blog/tags/Sitemap/" style="font-size: 10.00px;">Sitemap</a><a href="/blog/tags/SublimeText/" style="font-size: 12.00px;">SublimeText</a><a href="/blog/tags/VueJS/" style="font-size: 10.00px;">VueJS</a><a href="/blog/tags/Webpack/" style="font-size: 10.00px;">Webpack</a><a href="/blog/tags/Workshop/" style="font-size: 16.00px;">Workshop</a><a href="/blog/tags/coServ/" style="font-size: 12.00px;">coServ</a><a href="/blog/tags/高雄前端社群/" style="font-size: 12.00px;">高雄前端社群</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/05/">May 2015</a><span class="archive-list-count">15</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2016/10/21/nightwatch-react-todo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/10/20/nightwatch-cheerio/">網路爬蟲 - Nightwatch + Cheerio = 神鵰俠侶</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/10/13/add-component-on-react-starter-kit/">React Starter Kit 新增component</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/09/29/isomorphic-universal/">Isomorphic Javascript 與 Universal Javascript</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/08/08/nightwatch-intro/">Nightwatch JS - Introduction</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Andy Tsai<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'andyTsaiBlog';
+  
+  var disqus_url = 'http://bbandydd.github.io/blog/2015/05/21/coserv/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/blog/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/blog/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

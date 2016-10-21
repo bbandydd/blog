@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>sass-基本用法 | Andy&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Sass-基本用法
+
+變數
+計算
+@import
+@Mixin
+@extend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sass-基本用法">
+<meta property="og:url" content="http://bbandydd.github.io/blog/blog/2015/07/04/sass-baseusage/">
+<meta property="og:site_name" content="Andy's Blog">
+<meta property="og:description" content="Sass-基本用法
+
+變數
+計算
+@import
+@Mixin
+@extend">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sass-基本用法">
+<meta name="twitter:description" content="Sass-基本用法
+
+變數
+計算
+@import
+@Mixin
+@extend">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Andy&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog/css/style.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Andy&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://bbandydd.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-sass-baseusage" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2015/07/04/sass-baseusage/" class="article-date">
+  <time datetime="2015-07-04T15:39:11.000Z" itemprop="datePublished">Jul 4 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      sass-基本用法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Sass-基本用法">Sass-基本用法</h2>
+<ul>
+<li>變數</li>
+<li>計算</li>
+<li>@import</li>
+<li>@Mixin</li>
+<li>@extend</li>
+</ul>
+<a id="more"></a>
+<h2 id="變數">變數</h2>
+<p>首先模擬一些寫純CSS容易會遇到的情境</p>
+<ul>
+<li>一個網站內有四組文字連結顏色樣式，總CSS程式碼有5000行，有文字連結顏色的設定共98行。當客戶想要改某一個文字顏色樣式時，就必須花時間逐行去修改。</li>
+<li>要修改全域設定的網頁樣式時，時常必須用滾輪或肉眼從數百行中找出你要改的程式碼，像字型樣式、網站總體寬度等等。</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$text</span>-<span class="keyword">size</span>: <span class="number">32</span>px</div><div class="line"><span class="variable">$text</span>-color1: white</div><div class="line"><span class="variable">$text</span>-color2: black</div><div class="line"><span class="variable">$img</span>-url: <span class="string">'../img'</span></div><div class="line">.header</div><div class="line">    background-<span class="keyword">color</span>: red</div><div class="line">    a</div><div class="line">        font-<span class="keyword">size</span>: <span class="variable">$text</span>-<span class="keyword">size</span></div><div class="line">        <span class="keyword">color</span>: <span class="variable">$text</span>-color1</div><div class="line">.<span class="keyword">menu</span></div><div class="line">    background-<span class="keyword">color</span>: yellow</div><div class="line">    a</div><div class="line">        font-<span class="keyword">size</span>: <span class="variable">$text</span>-<span class="keyword">size</span></div><div class="line">        <span class="keyword">color</span>: <span class="variable">$text</span>-color2</div><div class="line">.li1</div><div class="line">    background: url(<span class="string">'#{$img-url}/dribble.png'</span>) no-repeat</div><div class="line">.li2</div><div class="line">    background: url(<span class="string">'#{$img-url}/facebook.png'</span>) no-repeat</div></pre></td></tr></table></figure>
+
+<ul>
+<li>打『$』字號，後面則是變數名稱</li>
+<li>使用#{}可以抓出字串使用</li>
+</ul>
+<hr>
+<h2 id="計算">計算</h2>
+<ul>
+<li>Sass支援加減乘除的計算</li>
+<li>當原本選單寬度600，目前只有三個選單可以整櫥，某天臨時又要增加四個，就必須拿計算機來算寬度</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$font</span>-<span class="keyword">size</span>: <span class="number">30</span>px</div><div class="line"><span class="variable">$nav</span>-width: <span class="number">600</span>px</div><div class="line"><span class="variable">$nav</span>-count: <span class="number">3</span></div><div class="line">.font-big</div><div class="line">    font-<span class="keyword">size</span>: <span class="variable">$font</span>-<span class="keyword">size</span> * <span class="number">1.2</span></div><div class="line">.font-middle</div><div class="line">    font-<span class="keyword">size</span>: <span class="variable">$font</span>-<span class="keyword">size</span> - <span class="number">3</span>px</div><div class="line">.font-small</div><div class="line">    font-<span class="keyword">size</span>: <span class="variable">$font</span>-<span class="keyword">size</span> / <span class="number">3</span></div><div class="line">ul</div><div class="line">    width: <span class="variable">$nav</span>-width</div><div class="line">    display: inline-block</div><div class="line">    background-<span class="keyword">color</span>: pink</div><div class="line">    li</div><div class="line">        <span class="keyword">float</span>: left</div><div class="line">        list-style: none</div><div class="line">        width: <span class="variable">$nav</span>-width / <span class="variable">$nav</span>-count</div></pre></td></tr></table></figure>
+
+<p>若使用不同單位會出錯，例如使用px和em進行計算。</p>
+<h2 id="@import">@import</h2>
+<ul>
+<li>在以往寫CSS時，<br>動輒數百、數千行，<br>寫多了就會很難找各CSS片段的位置，<br>且滾輪都必須滾很久才會找到對應的程式碼，<br>所以在以往都會在CSS寫註解，<br>至少用搜尋或找位置時都比較方便，</li>
+<li>但使用了Sass的@import功能，<br>就可以把CSS程式碼切成好幾份來做檔案管理，<br>最後編譯出來合併成一個CSS檔案，<br>在管理上自然方便得多。</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">import</span> <span class="string">"reset.sass"</span></div><div class="line">@<span class="keyword">import</span> <span class="string">"variable.sass"</span></div><div class="line">@<span class="keyword">import</span> <span class="string">"extend.sass"</span></div><div class="line">@<span class="keyword">import</span> <span class="string">"mixin.sass"</span></div><div class="line">@<span class="keyword">import</span> <span class="string">"index.sass"</span></div><div class="line">@<span class="keyword">import</span> <span class="string">"page.sass"</span></div></pre></td></tr></table></figure>
+
+<h2 id="mixin">mixin</h2>
+<ul>
+<li><p>在以前寫CSS的時候，<br>我們時常會遇到以下的情境，</p>
+</li>
+<li><p>在開發多種CSS樣式時，會講第一次寫的程式碼複製貼上後，<br>再進行修改，但當樣式整個大修時(例：圓形改方形)，<br>則又必須將所有CSS重新修正，頗不方便。</p>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="variable">@mixin</span> btn(<span class="variable">$color1</span>, <span class="variable">$color2</span>)</div><div class="line">    -webkit-border-radius: <span class="number">10</span>px</div><div class="line">    -moz-border-radius: <span class="number">10</span>px</div><div class="line">    border-radius: <span class="number">10</span>px</div><div class="line">    <span class="keyword">color</span>: purple</div><div class="line">    font-<span class="keyword">size</span>: <span class="number">26</span>px</div><div class="line">    background-<span class="keyword">image</span>: linear-gradient(to top, <span class="variable">$color1</span> <span class="number">40</span><span class="variable">%,</span> <span class="variable">$color2</span> <span class="number">60</span>% )</div><div class="line">.btn1</div><div class="line">    +btn(green, black)</div><div class="line">    width: <span class="number">100</span>px</div><div class="line">    height: <span class="number">100</span>px</div><div class="line">.btn2</div><div class="line">    +btn(yellow, green)</div><div class="line">    width: <span class="number">90</span>px</div><div class="line">    height: <span class="number">90</span>px</div></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="extend">extend</h2>
+<ul>
+<li>有的時候我們為了不要讓CSS太龐大，所以有class用到相同樣式時，都會將其合併起來，如下CSS碼：</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 第200行位置 */</span></div><div class="line"><span class="class">.div1</span>, <span class="class">.div2</span>, <span class="class">.div3</span>, <span class="class">.div4</span> <span class="rules">{</span></div><div class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100px</span></span></span>;</div><div class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100px</span></span></span>;</div><div class="line">  <span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> <span class="number">50px</span></span></span>;</div><div class="line">  <span class="rule"><span class="attribute">-moz-box-shadow</span>:<span class="value"> <span class="number">0</span> <span class="number">0</span> <span class="number">30px</span> <span class="hexcolor">#777777</span></span></span>;</div><div class="line">  <span class="rule"><span class="attribute">-webkit-box-shadow</span>:<span class="value"> <span class="number">0</span> <span class="number">0</span> <span class="number">30px</span> <span class="hexcolor">#777777</span></span></span>;</div><div class="line">  <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">0</span> <span class="number">0</span> <span class="number">30px</span> <span class="hexcolor">#777777</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="comment">/* 第1000行位置 */</span></div><div class="line"><span class="class">.div1</span> <span class="rules">{</span></div><div class="line">  <span class="rule"><span class="attribute">background-color</span>:<span class="value"> blue</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="comment">/* 第4000行位置 */</span></div><div class="line"><span class="class">.div2</span> <span class="rules">{</span></div><div class="line">  <span class="rule"><span class="attribute">background-color</span>:<span class="value"> red</span></span>;</div><div class="line"><span class="rule">}</span></div></pre></td></tr></table></figure>
+
+<ul>
+<li><p>但這樣子會有個麻煩的地方是，<br>假設合併樣式程式碼的位置在第200行，<br>而我目前所在位置是在4640行，<br>當我又需要合併樣式時，<br>就又必須用滾輪會調卷軸到第200行來合併class樣式，<br>所以當程式碼越變變多時，<br>要集中相同樣式的工作流程相對也會變得更加繁瑣，</p>
+</li>
+<li><p>所幸Sass ＠extend可以解決這樣的問題。<br>如果是用Sass來寫的話，<br>則就會變成這樣子：</p>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">%<span class="title">div</span></span>-init</div><div class="line">    width: 100px</div><div class="line">    height: 100px</div><div class="line">    margin-bottom: 50px</div><div class="line">    -<span class="ruby">moz-box-<span class="symbol">shadow:</span> <span class="number">0</span> <span class="number">0</span> <span class="number">30</span>px <span class="comment">#777777</span></span></div><div class="line">    -<span class="ruby">webkit-box-<span class="symbol">shadow:</span> <span class="number">0</span> <span class="number">0</span> <span class="number">30</span>px <span class="comment">#777777</span></span></div><div class="line">    box-shadow: 0 0 30px #777777</div><div class="line">.div1</div><div class="line">    background-color: blue</div><div class="line">    @extend %div-init</div><div class="line">.div2</div><div class="line">    background-color: red</div><div class="line">    @extend %div-init</div></pre></td></tr></table></figure>
+
+<ul>
+<li><p>究竟Mixin與extend的使用時機該如何抉擇？<br>基本上來說，<br>@mixin是將程式碼帶入到對應的class去，同時可帶入變數。<br>@extend則是藉由class合併，並吃到共通樣式，但沒辦法帶入變數。</p>
+</li>
+<li><p>所以如果你的樣式都固定不變的，<br>不會需要用參數帶進去改變樣式的話，<br>那就用@extend，程式碼會比較少些。</p>
+</li>
+<li><p>但如果你的程式碼需要帶入多個變數進行運算時，<br>那用@mixin則較適合。</p>
+</li>
+</ul>
+<hr>
+<h2 id="參考資料：">參考資料：</h2>
+<p><a href="http://sam0512.blogspot.tw/2013/10/sass.html" target="_blank" rel="external">Sass &amp; Susy教學手冊</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bbandydd.github.io/blog/2015/07/04/sass-baseusage/" data-id="qepiiijvgse5cdv1" class="article-share-link">Share</a>
+      
+        <a href="http://bbandydd.github.io/blog/2015/07/04/sass-baseusage/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Sass/">Sass</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2015/07/07/angular-practice1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Angular學習1:ng-app、ng-model、ng-controller
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2015/07/04/rwd-class1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">RWD課程1 - 基礎建立</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Angular/">Angular</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Atom/">Atom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Cheerio/">Cheerio</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CoffeeScript/">CoffeeScript</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Compass/">Compass</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Crawler/">Crawler</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Css/">Css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Disqus/">Disqus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/E2E/">E2E</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ES6/">ES6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/F2E/">F2E</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Firebase/">Firebase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Github/">Github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Gulp/">Gulp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/HackMD/">HackMD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mac/">Mac</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Markdown/">Markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Nightwatch/">Nightwatch</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/NodeJS/">NodeJS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Prepros/">Prepros</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/RWD/">RWD</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Rails/">Rails</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/React/">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Rwd/">Rwd</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Sass/">Sass</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Scrum/">Scrum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Sitemap/">Sitemap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/SublimeText/">SublimeText</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/VueJS/">VueJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Webpack/">Webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Workshop/">Workshop</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/coServ/">coServ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/高雄前端社群/">高雄前端社群</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/Angular/" style="font-size: 18.00px;">Angular</a><a href="/blog/tags/Atom/" style="font-size: 10.00px;">Atom</a><a href="/blog/tags/Bootstrap/" style="font-size: 10.00px;">Bootstrap</a><a href="/blog/tags/Cheerio/" style="font-size: 10.00px;">Cheerio</a><a href="/blog/tags/CoffeeScript/" style="font-size: 20.00px;">CoffeeScript</a><a href="/blog/tags/Compass/" style="font-size: 10.00px;">Compass</a><a href="/blog/tags/Crawler/" style="font-size: 10.00px;">Crawler</a><a href="/blog/tags/Css/" style="font-size: 10.00px;">Css</a><a href="/blog/tags/Disqus/" style="font-size: 10.00px;">Disqus</a><a href="/blog/tags/E2E/" style="font-size: 10.00px;">E2E</a><a href="/blog/tags/ES6/" style="font-size: 12.00px;">ES6</a><a href="/blog/tags/F2E/" style="font-size: 16.00px;">F2E</a><a href="/blog/tags/Firebase/" style="font-size: 10.00px;">Firebase</a><a href="/blog/tags/Github/" style="font-size: 14.00px;">Github</a><a href="/blog/tags/Gulp/" style="font-size: 10.00px;">Gulp</a><a href="/blog/tags/HackMD/" style="font-size: 10.00px;">HackMD</a><a href="/blog/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/blog/tags/Javascript/" style="font-size: 10.00px;">Javascript</a><a href="/blog/tags/Mac/" style="font-size: 12.00px;">Mac</a><a href="/blog/tags/Markdown/" style="font-size: 12.00px;">Markdown</a><a href="/blog/tags/Nightwatch/" style="font-size: 12.00px;">Nightwatch</a><a href="/blog/tags/NodeJS/" style="font-size: 12.00px;">NodeJS</a><a href="/blog/tags/Prepros/" style="font-size: 10.00px;">Prepros</a><a href="/blog/tags/RWD/" style="font-size: 12.00px;">RWD</a><a href="/blog/tags/Rails/" style="font-size: 10.00px;">Rails</a><a href="/blog/tags/React/" style="font-size: 12.00px;">React</a><a href="/blog/tags/Rwd/" style="font-size: 14.00px;">Rwd</a><a href="/blog/tags/Sass/" style="font-size: 16.00px;">Sass</a><a href="/blog/tags/Scrum/" style="font-size: 10.00px;">Scrum</a><a href="/blog/tags/Sitemap/" style="font-size: 10.00px;">Sitemap</a><a href="/blog/tags/SublimeText/" style="font-size: 12.00px;">SublimeText</a><a href="/blog/tags/VueJS/" style="font-size: 10.00px;">VueJS</a><a href="/blog/tags/Webpack/" style="font-size: 10.00px;">Webpack</a><a href="/blog/tags/Workshop/" style="font-size: 16.00px;">Workshop</a><a href="/blog/tags/coServ/" style="font-size: 12.00px;">coServ</a><a href="/blog/tags/高雄前端社群/" style="font-size: 12.00px;">高雄前端社群</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/05/">May 2015</a><span class="archive-list-count">15</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2016/10/21/nightwatch-react-todo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/10/20/nightwatch-cheerio/">網路爬蟲 - Nightwatch + Cheerio = 神鵰俠侶</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/10/13/add-component-on-react-starter-kit/">React Starter Kit 新增component</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/09/29/isomorphic-universal/">Isomorphic Javascript 與 Universal Javascript</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/08/08/nightwatch-intro/">Nightwatch JS - Introduction</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Andy Tsai<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'andyTsaiBlog';
+  
+  var disqus_url = 'http://bbandydd.github.io/blog/2015/07/04/sass-baseusage/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/blog/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/blog/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

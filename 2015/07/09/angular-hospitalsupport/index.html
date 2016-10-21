@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Angular實作 - 八仙塵爆傷者開放資料查詢 | Andy&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="這次的練習是使用Angular來開發八仙塵爆傷者開放資料查詢頁面，主要是透過OpenSource來呈現資訊給使用者使用到的Angular技術有ng-repeat、$http、filter
+Github
+成果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular實作 - 八仙塵爆傷者開放資料查詢">
+<meta property="og:url" content="http://bbandydd.github.io/blog/blog/2015/07/09/angular-hospitalsupport/">
+<meta property="og:site_name" content="Andy's Blog">
+<meta property="og:description" content="這次的練習是使用Angular來開發八仙塵爆傷者開放資料查詢頁面，主要是透過OpenSource來呈現資訊給使用者使用到的Angular技術有ng-repeat、$http、filter
+Github
+成果">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular實作 - 八仙塵爆傷者開放資料查詢">
+<meta name="twitter:description" content="這次的練習是使用Angular來開發八仙塵爆傷者開放資料查詢頁面，主要是透過OpenSource來呈現資訊給使用者使用到的Angular技術有ng-repeat、$http、filter
+Github
+成果">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Andy&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog/css/style.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Andy&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://bbandydd.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-angular-hospitalsupport" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2015/07/09/angular-hospitalsupport/" class="article-date">
+  <time datetime="2015-07-08T16:00:06.000Z" itemprop="datePublished">Jul 9 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Angular實作 - 八仙塵爆傷者開放資料查詢
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>這次的練習是使用Angular來開發八仙塵爆傷者開放資料查詢頁面，主要是透過OpenSource來呈現資訊給使用者<br>使用到的Angular技術有ng-repeat、$http、filter</li>
+<li><a href="https://github.com/kaohsiung-frontend/HospitalSupport" target="_blank" rel="external">Github</a></li>
+<li><a href="http://kaohsiung-frontend.github.io/HospitalSupport/" target="_blank" rel="external">成果</a></li>
+</ul>
+<a id="more"></a>
+<h2 id="家屬尋人">家屬尋人</h2>
+<ul>
+<li>ng-show</li>
+<li>ng-model</li>
+<li>ng-repeat</li>
+<li>custom filter</li>
+<li>angular.factory</li>
+</ul>
+<h2 id="搜尋輸入框">搜尋輸入框</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;input <span class="variable">type=</span><span class="string">"text"</span> <span class="variable">ng-show=</span><span class="string">"type=='people'"</span> <span class="variable">class=</span><span class="string">"form-control"</span> <span class="variable">ng-model=</span><span class="string">"MainCtrl.query"</span> <span class="variable">placeholder=</span><span class="string">"請輸入搜尋的條件（ex. 姓名、檢傷、收治單位）"</span> /&gt;</div></pre></td></tr></table></figure>
+
+<h2 id="呈現資料">呈現資料</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="variable">&lt;tbody&gt;</span></div><div class="line">	<span class="variable">&lt;tr ng-repeat="people in peopleList.data |  peopleSearch: MainCtrl.query"&gt;</span></div><div class="line">		<span class="variable">&lt;td&gt;</span></div><div class="line">			<span class="variable">&lt;p&gt;</span>{ { people[<span class="string">"編號"</span>] }}<span class="variable">&lt;/p&gt;</span></div><div class="line">			<span class="variable">&lt;p&gt;</span><span class="variable">&lt;a href="https://www.google.com/maps?q={ { people['縣市別'] }} { { people['收治單位'] }}"&gt;</span>{ { people[<span class="string">"縣市別"</span>] }} <span class="variable">&lt;br&gt;</span> { { people[<span class="string">"收治單位"</span>] }}<span class="variable">&lt;/a&gt;</span> <span class="variable">&lt;/p&gt;</span></div><div class="line">		<span class="variable">&lt;/td&gt;</span></div><div class="line">        <span class="variable">&lt;td&gt;</span></div><div class="line">            <span class="variable">&lt;p&gt;</span>{ { people[<span class="string">"姓名"</span>] }}<span class="variable">&lt;/p&gt;</span></div><div class="line">            <span class="variable">&lt;p class="label label-default"&gt;</span>{ { people[<span class="string">"性別"</span>] }} { { people[<span class="string">"年齡"</span>] }}<span class="variable">&lt;/p&gt;</span></div><div class="line">            <span class="variable">&lt;br&gt;</span></div><div class="line">            <span class="variable">&lt;p class="label label-default"&gt;</span>{ { people[<span class="string">"國籍"</span>] }}<span class="variable">&lt;/p&gt;</span></div><div class="line">        <span class="variable">&lt;/td&gt;</span></div><div class="line">        <span class="variable">&lt;td&gt;</span></div><div class="line">            <span class="variable">&lt;p class="label label-default"&gt;</span>醫療檢傷：{ { people[<span class="string">"醫療檢傷"</span>] }}<span class="variable">&lt;/p&gt;</span></div><div class="line">            <span class="variable">&lt;br&gt;</span></div><div class="line">            <span class="variable">&lt;p class="label label-default"&gt;</span>救護檢傷：{ { people[<span class="string">"救護檢傷"</span>] }}<span class="variable">&lt;/p&gt;</span></div><div class="line">            <span class="variable">&lt;br&gt;</span></div><div class="line">            <span class="variable">&lt;p class="label label-default"&gt;</span>檢傷編號：{ { people[<span class="string">"檢傷編號"</span>] }}<span class="variable">&lt;/p&gt;</span></div><div class="line">            <span class="variable">&lt;br&gt;</span></div><div class="line">            <span class="variable">&lt;p class="label label-default"&gt;</span>轉診要求：{ { people[<span class="string">"轉診要求"</span>] }}<span class="variable">&lt;/p&gt;</span></div><div class="line">            <span class="variable">&lt;br&gt;</span></div><div class="line">            <span class="variable">&lt;p class="label label-default"&gt;</span>刪除註記：{ { people[<span class="string">"刪除註記"</span>] }}<span class="variable">&lt;/p&gt;</span></div><div class="line">            <span class="variable">&lt;br&gt;</span></div><div class="line">            <span class="variable">&lt;br&gt;</span></div><div class="line">            <span class="variable">&lt;p class="label label-success"&gt;</span>即時動向：{ { people[<span class="string">"即時動向"</span>] }}<span class="variable">&lt;/p&gt;</span></div><div class="line">        <span class="variable">&lt;/td&gt;</span></div><div class="line">    <span class="variable">&lt;/tr&gt;</span></div><div class="line"><span class="variable">&lt;/tbody&gt;</span></div></pre></td></tr></table></figure>
+
+<h2 id="將JSON取得資料塞給$scope-peopleList">將JSON取得資料塞給$scope.peopleList</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">app.controller(<span class="string">'MainController'</span>,[<span class="string">'$scope'</span>, <span class="string">'blood'</span>, <span class="string">'people'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(<span class="variable">$scope</span>, blood, people)</span> </span>{</div><div class="line">    <span class="variable">$scope</span>.type = <span class="string">'blood'</span>;</div><div class="line"></div><div class="line">    blood</div><div class="line">       	.success(<span class="function"><span class="keyword">function</span><span class="params">(data)</span> </span>{</div><div class="line">          	<span class="variable">$scope</span>.bloodList = data;</div><div class="line">        })</div><div class="line">        .error(<span class="function"><span class="keyword">function</span> <span class="params">(err)</span> </span>{</div><div class="line">        	console.log(<span class="string">'blood-error:'</span> + err);</div><div class="line">        });</div><div class="line">    people</div><div class="line">        .success(<span class="function"><span class="keyword">function</span><span class="params">(data)</span></span>{</div><div class="line">            <span class="variable">$scope</span>.peopleList = data;</div><div class="line">        })</div><div class="line">        .error(<span class="function"><span class="keyword">function</span><span class="params">(err)</span></span>{</div><div class="line">            console.log(<span class="string">'people-error:'</span> + err);</div><div class="line">        });</div><div class="line">}]);</div></pre></td></tr></table></figure>
+
+<h2 id="取得JSON資料">取得JSON資料</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">app.factory(<span class="string">'people'</span>, [<span class="string">'$http'</span>, <span class="function"><span class="keyword">function</span> <span class="title">people</span><span class="params">(<span class="variable">$http</span>)</span></span>{</div><div class="line">    <span class="keyword">return</span> <span class="variable">$http</span>.get(<span class="string">'http:////tonyq.org/kptaipei/api-20150628.php'</span>)</div><div class="line">        .success(<span class="function"><span class="keyword">function</span><span class="params">(data)</span></span>{</div><div class="line">            <span class="keyword">return</span> data;</div><div class="line">        })</div><div class="line">        .error(<span class="function"><span class="keyword">function</span><span class="params">(err)</span></span>{</div><div class="line">            <span class="keyword">return</span> err;</div><div class="line">        });</div><div class="line">}]);</div></pre></td></tr></table></figure>
+
+<h2 id="自訂filter">自訂filter</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">app.<span class="built_in">filter</span>(<span class="string">'peopleSearch'</span>, [<span class="string">'$filter'</span>, <span class="function"><span class="keyword">function</span><span class="params">($filter)</span>{</span></div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">(data, text)</span>{</span></div><div class="line">		<span class="keyword">if</span> (!text) <span class="keyword">return</span> [];</div><div class="line">		data = data.<span class="built_in">filter</span>(<span class="function"><span class="keyword">function</span><span class="params">(item)</span>{</span></div><div class="line">			<span class="keyword">return</span> item[<span class="string">"姓名"</span>].<span class="built_in">search</span>(text) &gt; -<span class="number">1</span></div><div class="line">				|| item[<span class="string">"收治單位"</span>].<span class="built_in">search</span>(text) &gt; -<span class="number">1</span></div><div class="line">				|| item[<span class="string">"醫療檢傷"</span>].<span class="built_in">search</span>(text) &gt; -<span class="number">1</span></div><div class="line">				|| item[<span class="string">"救護檢傷"</span>].<span class="built_in">search</span>(text) &gt; -<span class="number">1</span>;</div><div class="line">		})</div><div class="line">		<span class="keyword">return</span> data;</div><div class="line">	}</div><div class="line">}]);</div></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="醫院概況">醫院概況</h2>
+<ul>
+<li>ng-show</li>
+<li>ng-model</li>
+<li>ng-repeat</li>
+<li>filter</li>
+<li>orderBy<ul>
+<li>+:由小到大</li>
+<li>-:由大到小</li>
+</ul>
+</li>
+</ul>
+<h2 id="搜尋輸入框-1">搜尋輸入框</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;input <span class="variable">type=</span><span class="string">"text"</span> <span class="variable">ng-show=</span><span class="string">"type=='hospital'"</span> <span class="variable">class=</span><span class="string">"form-control"</span> <span class="variable">ng-model=</span><span class="string">"MainCtrl.hospital"</span> <span class="variable">placeholder=</span><span class="string">"請輸入搜尋醫院"</span> /&gt;</div></pre></td></tr></table></figure>
+
+<h2 id="呈現資料-1">呈現資料</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">tbody</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">tr</span> <span class="attribute">ng-repeat</span>=<span class="value">"hospital in hospitalList | filter: MainCtrl.hospital | orderBy: '-sum'"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="title">td</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="title">p</span>&gt;</span>{ { hospital["收治單位"] }}<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="title">p</span>&gt;</span>傷者總數：{ { hospital["sum"] }}<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="title">td</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="title">td</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"label label-danger"</span>&gt;</span>重傷：{ { hospital["重傷"] }}<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"label label-warning"</span>&gt;</span>中傷：{ { hospital["中傷"] }}<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"label label-success"</span>&gt;</span>輕傷：{ { hospital["輕傷"] }}<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="title">br</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="title">br</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"progress"</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"progress-bar progress-bar-danger"</span> <span class="attribute">style</span>=<span class="value">"width: { { hospital['重傷'] / hospital['sum'] * 100}}%"</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"sr-only"</span>&gt;</span>{ { hospital['重傷'] / hospital['傷者總數'] * 100}}% Complete (danger)<span class="tag">&lt;/<span class="title">span</span>&gt;</span></div><div class="line">				<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"progress-bar progress-bar-warning progress-bar-striped"</span> <span class="attribute">style</span>=<span class="value">"width: { { hospital['中傷'] / hospital['sum'] * 100}}%"</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"sr-only"</span>&gt;</span>{ { hospital['中傷'] / hospital['傷者總數'] * 100}}% Complete (warning)<span class="tag">&lt;/<span class="title">span</span>&gt;</span></div><div class="line">				<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"progress-bar progress-bar-success"</span> <span class="attribute">style</span>=<span class="value">"width: { { hospital['輕傷'] / hospital['sum'] * 100}}%"</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"sr-only"</span>&gt;</span>{ { hospital['輕傷'] / hospital['傷者總數'] * 100}}% Complete (success)<span class="tag">&lt;/<span class="title">span</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">br</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"label label-default"</span>&gt;</span>加護病房：{ { hospital['加護病房'] }}<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"label label-default"</span>&gt;</span>一般病房：{ { hospital['一般病房'] }}<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"label label-default"</span>&gt;</span>其他：{ { hospital['其他'] }}<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="title">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">tbody</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<h2 id="將數量設定給$scope變數">將數量設定給$scope變數</h2>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line">people</div><div class="line">.success(<span class="function"><span class="keyword">function</span><span class="params">(data)</span></span>{</div><div class="line">    <span class="variable">$scope</span>.peopleList = data;</div><div class="line">    <span class="variable">$scope</span>.inHospitalCount = <span class="number">0</span>; <span class="comment">//未出院</span></div><div class="line">    <span class="variable">$scope</span>.sickRoomCount = <span class="number">0</span>;   <span class="comment">//一般病房</span></div><div class="line">    <span class="variable">$scope</span>.icuCount = <span class="number">0</span>;        <span class="comment">//加護病房</span></div><div class="line">    <span class="variable">$scope</span>.seriousInjuredCount = <span class="number">0</span>; <span class="comment">//重傷</span></div><div class="line">    <span class="variable">$scope</span>.mediumInjuredCount = <span class="number">0</span>;  <span class="comment">//中傷</span></div><div class="line">    <span class="variable">$scope</span>.slightInjuredCount = <span class="number">0</span>;  <span class="comment">//輕傷</span></div><div class="line">    <span class="variable">$scope</span>.sum = data.data.length; <span class="comment">//總人數</span></div><div class="line">    <span class="variable">$scope</span>.hospitalList = [];</div><div class="line">    angular.<span class="keyword">forEach</span>(data.data, <span class="function"><span class="keyword">function</span><span class="params">(obj)</span> </span>{</div><div class="line">        <span class="keyword">var</span> hospital = {<span class="string">"收治單位"</span>: <span class="string">""</span>, <span class="string">"重傷"</span>: <span class="number">0</span></div><div class="line">            , <span class="string">"中傷"</span>: <span class="number">0</span>, <span class="string">"輕傷"</span>: <span class="number">0</span>,<span class="string">"加護病房"</span>: <span class="number">0</span>,</div><div class="line">            <span class="string">"一般病房"</span>: <span class="number">0</span>, <span class="string">"其他"</span>: <span class="number">0</span>, <span class="string">"sum"</span>: <span class="number">0</span>};</div><div class="line">        <span class="keyword">var</span> addHospital = <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="variable">$scope</span>.hospitalList.length;i++){</div><div class="line">            <span class="keyword">if</span> (<span class="variable">$scope</span>.hospitalList[i][<span class="string">"收治單位"</span>] == obj[<span class="string">"收治單位"</span>]){</div><div class="line">                addHospital = <span class="keyword">false</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            }</div><div class="line">        }</div><div class="line">        <span class="keyword">if</span> (addHospital == <span class="keyword">true</span>) {</div><div class="line">            hospital[<span class="string">"收治單位"</span>] = obj[<span class="string">"收治單位"</span>];</div><div class="line">            <span class="variable">$scope</span>.hospitalList.push(hospital);</div><div class="line">        }</div><div class="line">        <span class="keyword">var</span> currentHospital;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="variable">$scope</span>.hospitalList.length;i++){</div><div class="line">            <span class="keyword">if</span> (<span class="variable">$scope</span>.hospitalList[i][<span class="string">"收治單位"</span>] == obj[<span class="string">"收治單位"</span>]){</div><div class="line">                currentHospital = <span class="variable">$scope</span>.hospitalList[i];</div><div class="line">            }</div><div class="line">        }</div><div class="line">        <span class="keyword">switch</span>(obj[<span class="string">"即時動向"</span>]){</div><div class="line">            <span class="keyword">case</span> <span class="string">'出院'</span>:</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="string">'一般病房'</span>:</div><div class="line">                <span class="variable">$scope</span>.inHospitalCount++;</div><div class="line">                <span class="variable">$scope</span>.sickRoomCount++;</div><div class="line">                currentHospital[<span class="string">"一般病房"</span>]++;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="string">'自動出院(AAD)'</span>:</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="string">'加護病房'</span>:</div><div class="line">                <span class="variable">$scope</span>.inHospitalCount++;</div><div class="line">                <span class="variable">$scope</span>.icuCount++;</div><div class="line">                currentHospital[<span class="string">"加護病房"</span>]++;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="string">'其他'</span>:</div><div class="line">                <span class="variable">$scope</span>.inHospitalCount++;</div><div class="line">                currentHospital[<span class="string">"其他"</span>]++;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="string">'死亡'</span>:</div><div class="line">                <span class="variable">$scope</span>.inHospitalCount++;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="string">'轉院'</span>:</div><div class="line">                <span class="variable">$scope</span>.inHospitalCount++;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        }</div><div class="line">        <span class="keyword">switch</span>(obj[<span class="string">"救護檢傷"</span>]){</div><div class="line">            <span class="keyword">case</span> <span class="string">'重傷'</span>:</div><div class="line">                <span class="variable">$scope</span>.seriousInjuredCount++;</div><div class="line">                currentHospital[<span class="string">"重傷"</span>]++;</div><div class="line">                currentHospital[<span class="string">"sum"</span>]++;</div><div class="line">                <span class="variable">$scope</span>.count1++;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="string">'中傷'</span>:</div><div class="line">                <span class="variable">$scope</span>.mediumInjuredCount++;</div><div class="line">                currentHospital[<span class="string">"中傷"</span>]++;</div><div class="line">                currentHospital[<span class="string">"sum"</span>]++;</div><div class="line">                <span class="variable">$scope</span>.count2++;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="string">'輕傷'</span>:</div><div class="line">                <span class="variable">$scope</span>.slightInjuredCount++;</div><div class="line">                currentHospital[<span class="string">"輕傷"</span>]++;</div><div class="line">                currentHospital[<span class="string">"sum"</span>]++;</div><div class="line">                <span class="variable">$scope</span>.count3++;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        }</div><div class="line">    });</div><div class="line">})</div><div class="line">.error(<span class="function"><span class="keyword">function</span><span class="params">(err)</span></span>{</div><div class="line">    console.log(<span class="string">'people-error:'</span> + err);</div><div class="line">});</div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bbandydd.github.io/blog/2015/07/09/angular-hospitalsupport/" data-id="undafc8ou32vciod" class="article-share-link">Share</a>
+      
+        <a href="http://bbandydd.github.io/blog/2015/07/09/angular-hospitalsupport/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Angular/">Angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Github/">Github</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2015/07/11/rwd-class2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          RWD課程2 - Mobile RWD
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2015/07/08/angular-practice2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Angular學習2:ng-click、ng-show</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Angular/">Angular</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Atom/">Atom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Bootstrap/">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Cheerio/">Cheerio</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CoffeeScript/">CoffeeScript</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Compass/">Compass</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Crawler/">Crawler</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Css/">Css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Disqus/">Disqus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/E2E/">E2E</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ES6/">ES6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/F2E/">F2E</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Firebase/">Firebase</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Github/">Github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Gulp/">Gulp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/HackMD/">HackMD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mac/">Mac</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Markdown/">Markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Nightwatch/">Nightwatch</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/NodeJS/">NodeJS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Prepros/">Prepros</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/RWD/">RWD</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Rails/">Rails</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/React/">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Rwd/">Rwd</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Sass/">Sass</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Scrum/">Scrum</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Sitemap/">Sitemap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/SublimeText/">SublimeText</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/VueJS/">VueJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Webpack/">Webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Workshop/">Workshop</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/coServ/">coServ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/高雄前端社群/">高雄前端社群</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/Angular/" style="font-size: 18.00px;">Angular</a><a href="/blog/tags/Atom/" style="font-size: 10.00px;">Atom</a><a href="/blog/tags/Bootstrap/" style="font-size: 10.00px;">Bootstrap</a><a href="/blog/tags/Cheerio/" style="font-size: 10.00px;">Cheerio</a><a href="/blog/tags/CoffeeScript/" style="font-size: 20.00px;">CoffeeScript</a><a href="/blog/tags/Compass/" style="font-size: 10.00px;">Compass</a><a href="/blog/tags/Crawler/" style="font-size: 10.00px;">Crawler</a><a href="/blog/tags/Css/" style="font-size: 10.00px;">Css</a><a href="/blog/tags/Disqus/" style="font-size: 10.00px;">Disqus</a><a href="/blog/tags/E2E/" style="font-size: 10.00px;">E2E</a><a href="/blog/tags/ES6/" style="font-size: 12.00px;">ES6</a><a href="/blog/tags/F2E/" style="font-size: 16.00px;">F2E</a><a href="/blog/tags/Firebase/" style="font-size: 10.00px;">Firebase</a><a href="/blog/tags/Github/" style="font-size: 14.00px;">Github</a><a href="/blog/tags/Gulp/" style="font-size: 10.00px;">Gulp</a><a href="/blog/tags/HackMD/" style="font-size: 10.00px;">HackMD</a><a href="/blog/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/blog/tags/Javascript/" style="font-size: 10.00px;">Javascript</a><a href="/blog/tags/Mac/" style="font-size: 12.00px;">Mac</a><a href="/blog/tags/Markdown/" style="font-size: 12.00px;">Markdown</a><a href="/blog/tags/Nightwatch/" style="font-size: 12.00px;">Nightwatch</a><a href="/blog/tags/NodeJS/" style="font-size: 12.00px;">NodeJS</a><a href="/blog/tags/Prepros/" style="font-size: 10.00px;">Prepros</a><a href="/blog/tags/RWD/" style="font-size: 12.00px;">RWD</a><a href="/blog/tags/Rails/" style="font-size: 10.00px;">Rails</a><a href="/blog/tags/React/" style="font-size: 12.00px;">React</a><a href="/blog/tags/Rwd/" style="font-size: 14.00px;">Rwd</a><a href="/blog/tags/Sass/" style="font-size: 16.00px;">Sass</a><a href="/blog/tags/Scrum/" style="font-size: 10.00px;">Scrum</a><a href="/blog/tags/Sitemap/" style="font-size: 10.00px;">Sitemap</a><a href="/blog/tags/SublimeText/" style="font-size: 12.00px;">SublimeText</a><a href="/blog/tags/VueJS/" style="font-size: 10.00px;">VueJS</a><a href="/blog/tags/Webpack/" style="font-size: 10.00px;">Webpack</a><a href="/blog/tags/Workshop/" style="font-size: 16.00px;">Workshop</a><a href="/blog/tags/coServ/" style="font-size: 12.00px;">coServ</a><a href="/blog/tags/高雄前端社群/" style="font-size: 12.00px;">高雄前端社群</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/06/">June 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/05/">May 2015</a><span class="archive-list-count">15</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2016/10/21/nightwatch-react-todo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/10/20/nightwatch-cheerio/">網路爬蟲 - Nightwatch + Cheerio = 神鵰俠侶</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/10/13/add-component-on-react-starter-kit/">React Starter Kit 新增component</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/09/29/isomorphic-universal/">Isomorphic Javascript 與 Universal Javascript</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/08/08/nightwatch-intro/">Nightwatch JS - Introduction</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Andy Tsai<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'andyTsaiBlog';
+  
+  var disqus_url = 'http://bbandydd.github.io/blog/2015/07/09/angular-hospitalsupport/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/blog/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/blog/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

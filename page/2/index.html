@@ -8,7 +8,7 @@
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Andy's Blog">
-<meta property="og:url" content="http://bbandydd.github.io/blog/blog/">
+<meta property="og:url" content="http://bbandydd.github.io/blog/blog/page/2/">
 <meta property="og:site_name" content="Andy's Blog">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -63,50 +63,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-nightwatch-react-todo" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-atom-intro" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2016/10/21/nightwatch-react-todo/" class="article-date">
-  <time datetime="2016-10-21T14:19:55.000Z" itemprop="datePublished">Oct 21 2016</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Nightwatch_+_ReactJS_todoMVC">Nightwatch + ReactJS todoMVC</h1>
-<hr>
-<h2 id="Nightwatch">Nightwatch</h2>
-<p><img src="https://i.imgur.com/549jK0V.png" alt="Nightwatch"></p>
-<ul>
-<li><a href="http://nightwatchjs.org/" target="_blank" rel="external">官網</a></li>
-</ul>
-
-        
-          <p class="article-more-link">
-            <a href="/blog/2016/10/21/nightwatch-react-todo/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://bbandydd.github.io/blog/2016/10/21/nightwatch-react-todo/" data-id="iopbh1vh22wllhzd" class="article-share-link">Share</a>
-      
-        <a href="http://bbandydd.github.io/blog/2016/10/21/nightwatch-react-todo/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-nightwatch-cheerio" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2016/10/20/nightwatch-cheerio/" class="article-date">
-  <time datetime="2016-10-20T09:33:22.000Z" itemprop="datePublished">Oct 20 2016</time>
+    <a href="/blog/2016/06/05/atom-intro/" class="article-date">
+  <time datetime="2016-06-05T13:26:37.000Z" itemprop="datePublished">Jun 5 2016</time>
 </a>
     
   </div>
@@ -117,7 +77,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/10/20/nightwatch-cheerio/">網路爬蟲 - Nightwatch + Cheerio = 神鵰俠侶</a>
+      <a class="article-title" href="/blog/2016/06/05/atom-intro/">atom-intro</a>
     </h1>
   
 
@@ -125,451 +85,504 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言">前言</h2>
+        <p><img src="http://media02.hongkiat.com/atom-code-editor/atom-logo.jpg"></p>
+
+        
+          <p class="article-more-link">
+            <a href="/blog/2016/06/05/atom-intro/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bbandydd.github.io/blog/2016/06/05/atom-intro/" data-id="r2mb7nnxe8bt32bo" class="article-share-link">Share</a>
+      
+        <a href="http://bbandydd.github.io/blog/2016/06/05/atom-intro/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Atom/">Atom</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo-backup" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2016/06/05/hexo-backup/" class="article-date">
+  <time datetime="2016-06-04T19:58:47.000Z" itemprop="datePublished">Jun 5 2016</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/06/05/hexo-backup/">Hexo + Github - 備份與發布</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="緣由">緣由</h1>
+<ol>
+<li>電腦內Hexo檔案消失</li>
+<li>Github只有產生完成的靜態檔案</li>
+<li>2015年寫的40篇文章消失</li>
+<li>中間經歷換工作及適應環境</li>
+<li>2016/6 決定重啟Hexo</li>
+<li>所以這次最重要的是 <font size="3" color="red">備份</font>  <font size="5" color="red">備份</font> <font size="7" color="red">備份</font></li>
+<li>因此這篇將會介紹如何使用同一個Repository備份及發佈Hexo</li>
+</ol>
+<p>–</p>
+<p>2016/06/06更新：</p>
 <ul>
-<li>之前發表過兩篇Nightwatch文章 <a href="http://bbandydd.github.io/blog/2016/08/08/nightwatch-intro/" target="_blank" rel="external">Nightwatch JS - Introduction</a> <a href="http://bbandydd.github.io/blog/2016/10/03/nightwatch-react-todo/" target="_blank" rel="external">Nightwatch + ReactJS todoMVC</a></li>
-<li>Nightwatch主要做End-to-End測試，模擬使用者操作網頁行為</li>
-<li><a href="https://github.com/bbandydd/crawler_nightwatch_cheerio" target="_blank" rel="external">本篇程式碼</a></li>
+<li>由於之前hexo有加入sitemap，因此網頁上還可以找到文章，慢慢手動將它補回來</li>
 </ul>
-<h2 id="緣由">緣由</h2>
+
+        
+          <p class="article-more-link">
+            <a href="/blog/2016/06/05/hexo-backup/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bbandydd.github.io/blog/2016/06/05/hexo-backup/" data-id="uk3510i0hpk0gm2y" class="article-share-link">Share</a>
+      
+        <a href="http://bbandydd.github.io/blog/2016/06/05/hexo-backup/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-sublime-plugin" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2016/05/26/sublime-plugin/" class="article-date">
+  <time datetime="2016-05-25T16:40:20.000Z" itemprop="datePublished">May 26 2016</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/05/26/sublime-plugin/">SublimeText Plugin 提升Sass開發效率</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="優點">優點</h2>
 <ul>
-<li>最近在玩NodeJS搭配cheerio做網路爬蟲</li>
-<li>針對有些頁面需要post參數才能擷取到網頁內容有些苦惱</li>
-<li>使用Nightwatch將網頁操作至所需頁面再使用cheerio爬網頁資訊實在是太威了<ul>
-<li>例如：需輸入時間區間進行查詢、輸入使用者帳密後進入的網頁等等</li>
+<li>有助於寫Sass、Scss上面可以快速找出想要的Code</li>
+<li>提升寫HTML、CSS的效率</li>
+<li>自動排版</li>
+</ul>
+<iframe src="https://www.youtube.com/embed/GFzjOzwtcxA" width="600" height="400" frameborder="0" allowfullscreen></iframe>
+
+
+        
+          <p class="article-more-link">
+            <a href="/blog/2016/05/26/sublime-plugin/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bbandydd.github.io/blog/2016/05/26/sublime-plugin/" data-id="j23zsmve3hmi28iv" class="article-share-link">Share</a>
+      
+        <a href="http://bbandydd.github.io/blog/2016/05/26/sublime-plugin/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Sass/">Sass</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/SublimeText/">SublimeText</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-coffeescript-angular" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2015/08/04/coffeescript-angular/" class="article-date">
+  <time datetime="2015-08-04T02:16:07.000Z" itemprop="datePublished">Aug 4 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2015/08/04/coffeescript-angular/">CoffeeScript Angular</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="使用CoffeeScript編寫Angular">使用CoffeeScript編寫Angular</h2>
+<ul>
+<li>module</li>
+<li>filter</li>
+<li>factory</li>
+<li>controller</li>
+</ul>
+
+        
+          <p class="article-more-link">
+            <a href="/blog/2015/08/04/coffeescript-angular/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bbandydd.github.io/blog/2015/08/04/coffeescript-angular/" data-id="8gl5er6n0uheowbk" class="article-share-link">Share</a>
+      
+        <a href="http://bbandydd.github.io/blog/2015/08/04/coffeescript-angular/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/CoffeeScript/">CoffeeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-coffeescript-prototype" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2015/08/03/coffeescript-prototype/" class="article-date">
+  <time datetime="2015-08-03T02:14:38.000Z" itemprop="datePublished">Aug 3 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2015/08/03/coffeescript-prototype/">CoffeeScript 擴充類別</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="擴充類別">擴充類別</h2>
+<ul>
+<li>JavaScript原本就可以使用prototype將類別進行擴充方法</li>
+<li>CoffeeScript的用法是::將類別進行擴充</li>
+</ul>
+
+        
+          <p class="article-more-link">
+            <a href="/blog/2015/08/03/coffeescript-prototype/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bbandydd.github.io/blog/2015/08/03/coffeescript-prototype/" data-id="2l3mynb67xo034uu" class="article-share-link">Share</a>
+      
+        <a href="http://bbandydd.github.io/blog/2015/08/03/coffeescript-prototype/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/CoffeeScript/">CoffeeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-coffeescript-globalvariable" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2015/08/03/coffeescript-globalvariable/" class="article-date">
+  <time datetime="2015-08-03T02:12:37.000Z" itemprop="datePublished">Aug 3 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2015/08/03/coffeescript-globalvariable/">CoffeeScript 全域變數</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="全域變數">全域變數</h2>
+<ul>
+<li>CoffeeScript中寫的變數及function，都是以區域變數包在裡面</li>
+<li>優點：不會影響到別的js</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">}).call(<span class="keyword">this</span>);</div></pre></td></tr></table></figure>
+
+
+        
+          <p class="article-more-link">
+            <a href="/blog/2015/08/03/coffeescript-globalvariable/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bbandydd.github.io/blog/2015/08/03/coffeescript-globalvariable/" data-id="ij54oauwx1zcqr69" class="article-share-link">Share</a>
+      
+        <a href="http://bbandydd.github.io/blog/2015/08/03/coffeescript-globalvariable/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/CoffeeScript/">CoffeeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-coffeescript-jquery" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2015/08/03/coffeescript-jquery/" class="article-date">
+  <time datetime="2015-08-03T02:01:29.000Z" itemprop="datePublished">Aug 3 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2015/08/03/coffeescript-jquery/">CoffeeScript jQuery</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="使用CoffeeScript編寫jQuery">使用CoffeeScript編寫jQuery</h2>
+
+        
+          <p class="article-more-link">
+            <a href="/blog/2015/08/03/coffeescript-jquery/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bbandydd.github.io/blog/2015/08/03/coffeescript-jquery/" data-id="f18d79vi1nzmm0lq" class="article-share-link">Share</a>
+      
+        <a href="http://bbandydd.github.io/blog/2015/08/03/coffeescript-jquery/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/CoffeeScript/">CoffeeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-coffeescript-oop" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2015/08/02/coffeescript-oop/" class="article-date">
+  <time datetime="2015-08-02T01:57:40.000Z" itemprop="datePublished">Aug 2 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2015/08/02/coffeescript-oop/">CoffeeScript OOP</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CoffeeScript_OOP">CoffeeScript OOP</h2>
+<ul>
+<li>class</li>
+<li>方法</li>
+<li>繼承(extends)</li>
+</ul>
+
+        
+          <p class="article-more-link">
+            <a href="/blog/2015/08/02/coffeescript-oop/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bbandydd.github.io/blog/2015/08/02/coffeescript-oop/" data-id="xn0krc8eq9cmlv5p" class="article-share-link">Share</a>
+      
+        <a href="http://bbandydd.github.io/blog/2015/08/02/coffeescript-oop/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/CoffeeScript/">CoffeeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-coffeescript-usage" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2015/08/02/coffeescript-usage/" class="article-date">
+  <time datetime="2015-08-02T01:33:20.000Z" itemprop="datePublished">Aug 2 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2015/08/02/coffeescript-usage/">CoffeeScript 基本使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>註解</li>
+<li>變數宣告</li>
+<li>Function</li>
+<li>陣列</li>
+<li>物件</li>
+<li>邏輯判斷</li>
+</ul>
+
+        
+          <p class="article-more-link">
+            <a href="/blog/2015/08/02/coffeescript-usage/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bbandydd.github.io/blog/2015/08/02/coffeescript-usage/" data-id="euvicquvxd7as0b4" class="article-share-link">Share</a>
+      
+        <a href="http://bbandydd.github.io/blog/2015/08/02/coffeescript-usage/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/CoffeeScript/">CoffeeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-rwd-class5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2015/08/01/rwd-class5/" class="article-date">
+  <time datetime="2015-07-31T18:16:12.000Z" itemprop="datePublished">Aug 1 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2015/08/01/rwd-class5/">RWD課程5 - Mobile 進階開發細節</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Week5_-_Mobile_進階開發細節">Week5 - Mobile 進階開發細節</h2>
+<ul>
+<li><a href="http://www.slideshare.net/sfismy/vertical-rhythm" target="_blank" rel="external">Vertical rhyth(文字垂直韻律)</a>、<a href="http://codepen.io/liao/pen/pHyhg" target="_blank" rel="external">範例</a></li>
+<li><a href="https://schema.org" target="_blank" rel="external">schema</a>、<a href="https://developers.google.com/structured-data/testing-tool/" target="_blank" rel="external">線上檢測工具</a></li>
+<li><a href="http://codepen.io/liao/pen/waaamx?editors=101" target="_blank" rel="external">schema sample</a></li>
+<li>review RWD<ul>
+<li>以數據分析來設計資訊流</li>
+<li>規劃圖片策略，瀏覽器技術(是否可支援border-box，IE9以上)</li>
+<li>使用chrome dev tools Debug</li>
+<li><a href="https://myerstone.hackpad.com/W-home-style-gec9DKCX8H3" target="_blank" rel="external">組件化模組</a></li>
 </ul>
 </li>
+<li><a href="https://docs.google.com/presentation/d/10h6iyl3o4TL_bZToHDC9If0wTz4MetZVLfXawXGkoBg/edit?pli=1#slide=id.p12" target="_blank" rel="external">前端開發流程分享</a></li>
+<li>HTML5、網頁語意化技巧</li>
+<li>行動版測試友善度、page speed、chrome plugin to pagespeed</li>
+<li>設定關鍵字種類：itemscope itemtype=”<a href="http://schema.org/Product“" target="_blank" rel="external">http://schema.org/Product“</a></li>
+<li>設定名稱：itemprop=”name”</li>
+<li>設定圖片：itemprop=”image”</li>
+<li>設定描述：itemprop=”description”</li>
 </ul>
 
         
           <p class="article-more-link">
-            <a href="/blog/2016/10/20/nightwatch-cheerio/#more">Read More</a>
+            <a href="/blog/2015/08/01/rwd-class5/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://bbandydd.github.io/blog/2016/10/20/nightwatch-cheerio/" data-id="6myllfsyk183qdpn" class="article-share-link">Share</a>
+      <a data-url="http://bbandydd.github.io/blog/2015/08/01/rwd-class5/" data-id="t01qv82qtyrdyog3" class="article-share-link">Share</a>
       
-        <a href="http://bbandydd.github.io/blog/2016/10/20/nightwatch-cheerio/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Cheerio/">Cheerio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Crawler/">Crawler</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Nightwatch/">Nightwatch</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-add-component-on-react-starter-kit" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2016/10/13/add-component-on-react-starter-kit/" class="article-date">
-  <time datetime="2016-10-12T17:51:36.000Z" itemprop="datePublished">Oct 13 2016</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/10/13/add-component-on-react-starter-kit/">React Starter Kit 新增component</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="緣由">緣由</h2>
-<ul>
-<li><p>因為讀書會需要用到<a href="https://github.com/kriasoft/react-starter-kit/tree/feature/react-intl" target="_blank" rel="external">React Starter Kit</a></p>
-</li>
-<li><p>但因為結構有些複雜，花了點時間研究</p>
-</li>
-<li><p>官方文件提到和redux結合可以參考src/components/LanguageSwitcher/LanguageSwitcher.js</p>
-</li>
-<li><p>下面講解如何加入一個新的Component並結合Redux</p>
-</li>
-</ul>
-
-        
-          <p class="article-more-link">
-            <a href="/blog/2016/10/13/add-component-on-react-starter-kit/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://bbandydd.github.io/blog/2016/10/13/add-component-on-react-starter-kit/" data-id="saimf8kd16q13sd2" class="article-share-link">Share</a>
-      
-        <a href="http://bbandydd.github.io/blog/2016/10/13/add-component-on-react-starter-kit/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://bbandydd.github.io/blog/2015/08/01/rwd-class5/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/React/">React</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-isomorphic-universal" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2016/09/29/isomorphic-universal/" class="article-date">
-  <time datetime="2016-09-29T07:20:36.000Z" itemprop="datePublished">Sep 29 2016</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/09/29/isomorphic-universal/">Isomorphic Javascript 與 Universal Javascript</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="緣由">緣由</h2>
-<ul>
-<li><p>許多文章和github都會提到這兩個東西並將兩個當成相同的東西</p>
-</li>
-<li><p>下面就來分別解釋他們兩個差別</p>
-</li>
-</ul>
-
-        
-          <p class="article-more-link">
-            <a href="/blog/2016/09/29/isomorphic-universal/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://bbandydd.github.io/blog/2016/09/29/isomorphic-universal/" data-id="7jzac43svxhtz8np" class="article-share-link">Share</a>
-      
-        <a href="http://bbandydd.github.io/blog/2016/09/29/isomorphic-universal/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/F2E/">F2E</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Javascript/">Javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-nightwatch-intro" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2016/08/08/nightwatch-intro/" class="article-date">
-  <time datetime="2016-08-08T08:49:26.000Z" itemprop="datePublished">Aug 8 2016</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/08/08/nightwatch-intro/">Nightwatch JS - Introduction</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Nightwatch_JS">Nightwatch JS</h1>
-<p><img src="https://i.imgur.com/549jK0V.png" alt="Nightwatch"></p>
-<p><a href="http://nightwatchjs.org/api" target="_blank" rel="external">API Reference</a></p>
-
-        
-          <p class="article-more-link">
-            <a href="/blog/2016/08/08/nightwatch-intro/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://bbandydd.github.io/blog/2016/08/08/nightwatch-intro/" data-id="p4cfxd31pi7pii2r" class="article-share-link">Share</a>
-      
-        <a href="http://bbandydd.github.io/blog/2016/08/08/nightwatch-intro/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/E2E/">E2E</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Nightwatch/">Nightwatch</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-es6-started" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2016/07/02/es6-started/" class="article-date">
-  <time datetime="2016-07-02T12:44:37.000Z" itemprop="datePublished">Jul 2 2016</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/07/02/es6-started/">ECMAScript 6 入門</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Javascript標準制定者計劃每年發佈一次，使用年份作為標準的版本。</p>
-<p>ES6在2015年發布的，因此又稱ECMAScript2015。</p>
-<hr>
-
-        
-          <p class="article-more-link">
-            <a href="/blog/2016/07/02/es6-started/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://bbandydd.github.io/blog/2016/07/02/es6-started/" data-id="zaa0b81ty2r2eub5" class="article-share-link">Share</a>
-      
-        <a href="http://bbandydd.github.io/blog/2016/07/02/es6-started/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/ES6/">ES6</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-webpack-intro" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2016/06/18/webpack-intro/" class="article-date">
-  <time datetime="2016-06-18T09:04:07.000Z" itemprop="datePublished">Jun 18 2016</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/06/18/webpack-intro/">Webpack 模組整合工具 - React + ES6</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://webpack.github.io/assets/what-is-webpack.png" alt=""></p>
-<ul>
-<li>這篇會做出開發React + ES6的Webpack設定</li>
-<li><a href="https://github.com/bbandydd/webpack_sample" target="_blank" rel="external">Sample</a></li>
-</ul>
-<h2 id="Webpack">Webpack</h2>
-<p>Webpack 是德國開發者 Tobias Koppers 開發的模組整合工具。它的核心功能如下:</p>
-<ul>
-<li>轉換 JSX, Coffee Script, TypeScript, ES6 等</li>
-<li>分散封裝專案使用的程式碼，使載入頁面時只需載入當頁所需的程式碼以加速載入速度</li>
-<li>整合樣式表 (css, sass, less 等)</li>
-<li>處理圖片與字型</li>
-<li>建置 production-ready 的程式碼 (壓縮)</li>
-<li>豐富的模組物件</li>
-</ul>
-
-        
-          <p class="article-more-link">
-            <a href="/blog/2016/06/18/webpack-intro/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://bbandydd.github.io/blog/2016/06/18/webpack-intro/" data-id="h4a790sbaserrz6d" class="article-share-link">Share</a>
-      
-        <a href="http://bbandydd.github.io/blog/2016/06/18/webpack-intro/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/ES6/">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/React/">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Webpack/">Webpack</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-kaohsiung-f2e-24" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2016/06/12/kaohsiung-f2e-24/" class="article-date">
-  <time datetime="2016-06-12T06:04:53.000Z" itemprop="datePublished">Jun 12 2016</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/06/12/kaohsiung-f2e-24/">高雄前端社群#24 - 好的瀏覽器開發工具帶你上天堂</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://gonsakon-7655f2.kktix.cc/events/a5791ac5-f60f9c-cc9dec-eb381d-6b57e9-3a5710-61e623-17b85b-3ac7a7" target="_blank" rel="external">活動網址</a></p>
-<p>常常寫程式狂按F5更新網頁功能嗎？</p>
-<p>你知道瀏覽器內建超強的開發除錯工具嗎？</p>
-<p>一塊來揭開 chrome 的神秘面紗，極速提升你的開發效率！</p>
-<p><a href="https://hackmd.io/p/S1pZFrh4#/" target="_blank" rel="external">HackMD</a></p>
-
-        
-          <p class="article-more-link">
-            <a href="/blog/2016/06/12/kaohsiung-f2e-24/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://bbandydd.github.io/blog/2016/06/12/kaohsiung-f2e-24/" data-id="9irry1ltqc5x4fuu" class="article-share-link">Share</a>
-      
-        <a href="http://bbandydd.github.io/blog/2016/06/12/kaohsiung-f2e-24/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/F2E/">F2E</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/高雄前端社群/">高雄前端社群</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hackmd-markdown" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2016/06/11/hackmd-markdown/" class="article-date">
-  <time datetime="2016-06-11T11:22:42.000Z" itemprop="datePublished">Jun 11 2016</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/06/11/hackmd-markdown/">HackMD + Markdown 常用語法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>HackMD是即時的共同協作筆記</p>
-<p>它可以讓您用Markdown語法</p>
-<p>無痛的協作文件與討論</p>
-<p>同時支援手機、平板與電腦！</p>
-<p><a href="https://hackmd.io" target="_blank" rel="external">HackMD官網</a></p>
-<p><a href="https://hackmd.io/p/Hy-AOuKN#/11" target="_blank" rel="external">簡報</a></p>
-<p><a href="https://hackmd.io/EYRgbAhsBMDsAmBaMBjAHAVkQFgyYiAnGBkibAGYAMEAzPIbAKYVA===" target="_blank" rel="external">原始檔</a></p>
-
-        
-          <p class="article-more-link">
-            <a href="/blog/2016/06/11/hackmd-markdown/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://bbandydd.github.io/blog/2016/06/11/hackmd-markdown/" data-id="bkjd00w97synozkb" class="article-share-link">Share</a>
-      
-        <a href="http://bbandydd.github.io/blog/2016/06/11/hackmd-markdown/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/HackMD/">HackMD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Markdown/">Markdown</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-vuejs-firebase-workshop" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2016/06/08/vuejs-firebase-workshop/" class="article-date">
-  <time datetime="2016-06-08T01:22:16.000Z" itemprop="datePublished">Jun 8 2016</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/06/08/vuejs-firebase-workshop/">Vue.js + Firebase 動手做</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://softwareengineeringdaily.com/wp-content/uploads/2015/12/vuejs.jpg" style="border: 1px solid black; width: 640px;"></p>
-<p><img src="http://www.programwitherik.com/content/images/2015/06/Firebase.png"></p>
-<p><a href="https://hackmd.io/p/HJbgb47N#/" target="_blank" rel="external">hackmd</a></p>
-<p><a href="https://hackpad.com/Vue.js-Firebase--vLoj1BeTn8f" target="_blank" rel="external">hackpad</a></p>
-
-        
-          <p class="article-more-link">
-            <a href="/blog/2016/06/08/vuejs-firebase-workshop/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://bbandydd.github.io/blog/2016/06/08/vuejs-firebase-workshop/" data-id="3kvww7p83xoqk9dc" class="article-share-link">Share</a>
-      
-        <a href="http://bbandydd.github.io/blog/2016/06/08/vuejs-firebase-workshop/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Firebase/">Firebase</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/VueJS/">VueJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Workshop/">Workshop</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/RWD/">RWD</a></li></ul>
 
     </footer>
   </div>
@@ -580,7 +593,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/5/">5</a><a class="extend next" rel="next" href="/blog/page/2/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/blog/">&laquo; Prev</a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><a class="page-number" href="/blog/page/4/">4</a><a class="page-number" href="/blog/page/5/">5</a><a class="extend next" rel="next" href="/blog/page/3/">Next &raquo;</a>
     </nav>
   
 </section>
