@@ -3,36 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Mac 終端機iTerm + zsh agonster主題優化 | Andy&#39;s Blog</title>
+  <title>Tag: Google Map | Andy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Install iterm2
-
-iTerm2 是社群開發出來取代 Mac OS X 內建的 Terminal(終端機) 的好用軟體。有興趣的朋友可以閱讀官網上的 Features 頁面，可以對 iTerm2 提供的功能有更多的了解。
-
-官網
-
-安裝方式︰下載後解壓縮，將解壓縮出來的檔案，放置到 /Applications 目錄下即可">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Mac 終端機iTerm + zsh agonster主題優化">
-<meta property="og:url" content="http://bbandydd.github.io/blog/blog/2015/05/16/iterm-zsh/">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Andy's Blog">
+<meta property="og:url" content="http://bbandydd.github.io/blog/blog/tags/Google-Map/">
 <meta property="og:site_name" content="Andy's Blog">
-<meta property="og:description" content="Install iterm2
-
-iTerm2 是社群開發出來取代 Mac OS X 內建的 Terminal(終端機) 的好用軟體。有興趣的朋友可以閱讀官網上的 Features 頁面，可以對 iTerm2 提供的功能有更多的了解。
-
-官網
-
-安裝方式︰下載後解壓縮，將解壓縮出來的檔案，放置到 /Applications 目錄下即可">
-<meta property="og:image" content="https://googledrive.com/host/0B0pH-JgGVSTDV25iM1p0N2Q2OVE">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mac 終端機iTerm + zsh agonster主題優化">
-<meta name="twitter:description" content="Install iterm2
-
-iTerm2 是社群開發出來取代 Mac OS X 內建的 Terminal(終端機) 的好用軟體。有興趣的朋友可以閱讀官網上的 Features 頁面，可以對 iTerm2 提供的功能有更多的了解。
-
-官網
-
-安裝方式︰下載後解壓縮，將解壓縮出來的檔案，放置到 /Applications 目錄下即可">
+<meta name="twitter:title" content="Andy's Blog">
+<meta name="twitter:description">
 
   
     <link rel="alternative" href="/atom.xml" title="Andy&#39;s Blog" type="application/atom+xml">
@@ -80,10 +61,12 @@ iTerm2 是社群開發出來取代 Mac OS X 內建的 Terminal(終端機) 的好
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-iterm-zsh" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-google-map-url-usage" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2015/05/16/iterm-zsh/" class="article-date">
-  <time datetime="2015-05-16T14:40:56.000Z" itemprop="datePublished">May 16 2015</time>
+    <a href="/blog/2017/02/04/google-map-url-usage/" class="article-date">
+  <time datetime="2017-02-04T10:01:00.000Z" itemprop="datePublished">Feb 4 2017</time>
 </a>
     
   </div>
@@ -93,8 +76,8 @@ iTerm2 是社群開發出來取代 Mac OS X 內建的 Terminal(終端機) 的好
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Mac 終端機iTerm + zsh agonster主題優化
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2017/02/04/google-map-url-usage/">Google Map - Static Map &amp; Navigation</a>
     </h1>
   
 
@@ -102,92 +85,36 @@ iTerm2 是社群開發出來取代 Mac OS X 內建的 Terminal(終端機) 的好
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Install_iterm2">Install iterm2</h2>
-<ul>
-<li><p>iTerm2 是社群開發出來取代 Mac OS X 內建的 Terminal(終端機) 的好用軟體。有興趣的朋友可以閱讀官網上的 Features 頁面，可以對 iTerm2 提供的功能有更多的了解。</p>
-</li>
-<li><p><a href="http://www.iterm2.com/#/section/home" target="_blank" rel="external">官網</a></p>
-</li>
-<li><p>安裝方式︰下載後解壓縮，將解壓縮出來的檔案，放置到 /Applications 目錄下即可</p>
-</li>
-</ul>
-<a id="more"></a>
-<h2 id="agonster主題優化">agonster主題優化</h2>
-<p><img src="https://googledrive.com/host/0B0pH-JgGVSTDV25iM1p0N2Q2OVE" alt=""></p>
-<h2 id="Install_oh-my-zsh">Install oh-my-zsh</h2>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -L http<span class="variable">s:</span>//github.<span class="keyword">com</span>/robbyrussell/oh-my-zsh/raw/master/tools/install.<span class="keyword">sh</span> | <span class="keyword">sh</span></div></pre></td></tr></table></figure>
+        <h2 id="目的">目的</h2>
+<ol>
+<li>使用Google Map URL傳入參數就可以實現路線規劃功能，也可抓取目前位置進行規劃</li>
+<li><a href="https://developers.google.com/maps/documentation/static-maps/intro?hl=zh-tw" target="_blank" rel="external">Google Static Map</a>可以取得地圖影像</li>
+</ol>
+<p><img src="https://i.imgur.com/ZJRs2fV.png" alt=""></p>
 
-<ul>
-<li>小提示：記得要輸入密碼，若無輸入密碼則會繼續安裝，但是安裝主題時會發生問題</li>
-</ul>
-<h2 id="更改主題">更改主題</h2>
-<ul>
-<li>再開啟 ~/.zshrc， 這是一個隱藏檔案所以要先在 Finder 顯示隱藏檔。</li>
-</ul>
-<h2 id="顯示隱藏檔">顯示隱藏檔</h2>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">defaults <span class="keyword">write</span> <span class="keyword">com</span>.apple.finder AppleShowAllFiles TRUE && killall Finder</div></pre></td></tr></table></figure>
-
-<h2 id="不顯示隱藏檔">不顯示隱藏檔</h2>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">defaults <span class="keyword">write</span> <span class="keyword">com</span>.apple.finder AppleShowAllFiles FALSE && killall Finder</div></pre></td></tr></table></figure>
-
-<h2 id="zsh主題">zsh主題</h2>
-<p><a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes" target="_blank" rel="external">主題下載</a></p>
-<p>這次修改的是agonster</p>
-<p>ZSH_THEME=”agonster”</p>
-<h2 id="修改顏色">修改顏色</h2>
-<ul>
-<li><p><a href="http://ethanschoonover.com/solarized" target="_blank" rel="external">下載</a></p>
-</li>
-<li><p>選Menlo for Powerline，點兩下之後點擊「安裝字體」</p>
-</li>
-<li><p>iTerm -&gt; Preferences -&gt; Profiles -&gt; Text ，裡面 Change Font 兩個都改成Menlo for Powerline</p>
-</li>
-</ul>
-<h2 id="Refereces">Refereces</h2>
-<p><a href="http://iphone4.tw/forums/showthread.php?t=206652" target="_blank" rel="external">http://iphone4.tw/forums/showthread.php?t=206652</a></p>
-
+        
+          <p class="article-more-link">
+            <a href="/blog/2017/02/04/google-map-url-usage/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://bbandydd.github.io/blog/2015/05/16/iterm-zsh/" data-id="rb6aemj51wv4l0es" class="article-share-link">Share</a>
+      <a data-url="http://bbandydd.github.io/blog/2017/02/04/google-map-url-usage/" data-id="jcwy7kxsuyka6qsf" class="article-share-link">Share</a>
       
-        <a href="http://bbandydd.github.io/blog/2015/05/16/iterm-zsh/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://bbandydd.github.io/blog/2017/02/04/google-map-url-usage/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Mac/">Mac</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Google-Map/">Google Map</a></li></ul>
 
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/blog/2015/05/21/coserv/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          coServ Workshop 淺談Sass及RWD
-        
-      </div>
-    </a>
-  
-  
-    <a href="/blog/2015/05/16/hexo-disqus/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hexo 留言板 - Disqus</div>
-    </a>
-  
-</nav>
-
-  
 </article>
 
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+  
+  
 </section>
         
           <aside id="sidebar">
@@ -276,13 +203,11 @@ iTerm2 是社群開發出來取代 Mac OS X 內建的 Terminal(終端機) 的好
 <script>
   var disqus_shortname = 'andyTsaiBlog';
   
-  var disqus_url = 'http://bbandydd.github.io/blog/2015/05/16/iterm-zsh/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

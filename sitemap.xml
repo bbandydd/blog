@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://bbandydd.github.io/blog/2017/02/04/google-map-url-usage/</loc>
+    <lastmod>2017-02-04T10:13:38.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://bbandydd.github.io/blog/2017/01/08/js-input-loop/</loc>
     <lastmod>2017-01-08T08:11:09.000Z</lastmod>
   </url>
@@ -202,12 +207,7 @@
   </url>
   
   <url>
-    <loc>http://bbandydd.github.io/blog/2015/05/26/sass-compass/</loc>
-    <lastmod>2016-06-12T06:57:32.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://bbandydd.github.io/blog/2015/06/21/kaohsiung-f2e-18/</loc>
+    <loc>http://bbandydd.github.io/blog/2015/07/04/sass-baseusage/</loc>
     <lastmod>2016-06-12T06:57:32.000Z</lastmod>
   </url>
   
@@ -222,17 +222,17 @@
   </url>
   
   <url>
-    <loc>http://bbandydd.github.io/blog/2015/07/04/sass-baseusage/</loc>
-    <lastmod>2016-06-12T06:57:32.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://bbandydd.github.io/blog/2015/07/04/rwd-class1/</loc>
-    <lastmod>2016-06-12T06:57:32.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://bbandydd.github.io/blog/2015/05/27/prepros-intro/</loc>
+    <lastmod>2016-06-12T06:57:32.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bbandydd.github.io/blog/2015/05/26/sass-compass/</loc>
+    <lastmod>2016-06-12T06:57:32.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bbandydd.github.io/blog/2015/05/27/personal-login/</loc>
     <lastmod>2016-06-12T06:57:32.000Z</lastmod>
   </url>
   
@@ -242,7 +242,7 @@
   </url>
   
   <url>
-    <loc>http://bbandydd.github.io/blog/2015/05/27/personal-login/</loc>
+    <loc>http://bbandydd.github.io/blog/2015/07/04/rwd-class1/</loc>
     <lastmod>2016-06-12T06:57:32.000Z</lastmod>
   </url>
   
@@ -253,6 +253,11 @@
   
   <url>
     <loc>http://bbandydd.github.io/blog/2015/05/16/iterm-zsh/</loc>
+    <lastmod>2016-06-12T06:57:32.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://bbandydd.github.io/blog/2015/06/21/kaohsiung-f2e-18/</loc>
     <lastmod>2016-06-12T06:57:32.000Z</lastmod>
   </url>
   
