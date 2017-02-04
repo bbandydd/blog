@@ -5,5 +5,5 @@ hexo.on('new', function(path){
     exec('open -a "/Applications/Sublime Text.app"' + path);
   */
  
-  exec('open -a "/Applications/atom.app" ' + path);
+  exec('open -a "/Applications/Visual Studio Code.app" ' + path);
 });
